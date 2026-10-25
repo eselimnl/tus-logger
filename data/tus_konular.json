@@ -1,0 +1,2857 @@
+{
+  "kaynak": "https://tuskocu.com/tus-konulari-ve-soru-dagilimi/ ve ders alt sayfaları",
+  "sinavlar": [
+    "2026 Mart",
+    "2025 Ağustos",
+    "2025 Mart",
+    "2024 Ağustos",
+    "2024 Mart",
+    "2023 Eylül"
+  ],
+  "sinav_basina_toplam_soru": 200,
+  "power_aciklamasi": "ortalama_soru = son 6 TUS'ta konudan gelen ortalama soru; sinav_yuzdesi = bunun 200 soruya oranı; oncelik: >=3 Yüksek, >=1.5 Orta, altı Düşük (bizim türettiğimiz etiket)",
+  "dersler": [
+    {
+      "ders": "Anatomi",
+      "bolum": "Temel Bilimler",
+      "sinavdaki_soru": 13,
+      "konu_sayisi": 8,
+      "konular": [
+        {
+          "id": 1,
+          "ders": "Anatomi",
+          "bolum": "Temel Bilimler",
+          "konu": "Kemikler",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 0,
+            "2025 Mart": 3,
+            "2024 Ağustos": 1,
+            "2024 Mart": 0,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 8,
+          "ortalama_soru": 1.33,
+          "ders_ici_yuzde": 10.3,
+          "sinav_yuzdesi": 0.67,
+          "son_3_sinav_ort": 2.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 2,
+          "ders": "Anatomi",
+          "bolum": "Temel Bilimler",
+          "konu": "Eklemler",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 1,
+            "2025 Mart": 0,
+            "2024 Ağustos": 0,
+            "2024 Mart": 0,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 1,
+          "ortalama_soru": 0.17,
+          "ders_ici_yuzde": 1.3,
+          "sinav_yuzdesi": 0.09,
+          "son_3_sinav_ort": 0.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 3,
+          "ders": "Anatomi",
+          "bolum": "Temel Bilimler",
+          "konu": "Kaslar",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 1,
+            "2025 Mart": 2,
+            "2024 Ağustos": 3,
+            "2024 Mart": 2,
+            "2023 Eylül": 3
+          },
+          "toplam_6_sinav": 14,
+          "ortalama_soru": 2.33,
+          "ders_ici_yuzde": 17.9,
+          "sinav_yuzdesi": 1.17,
+          "son_3_sinav_ort": 2.0,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 4,
+          "ders": "Anatomi",
+          "bolum": "Temel Bilimler",
+          "konu": "Solunum Sistemi",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 2,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 7,
+          "ortalama_soru": 1.17,
+          "ders_ici_yuzde": 9.0,
+          "sinav_yuzdesi": 0.58,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 5,
+          "ders": "Anatomi",
+          "bolum": "Temel Bilimler",
+          "konu": "Dolaşım Sistemi",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 3,
+            "2025 Mart": 0,
+            "2024 Ağustos": 2,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 8,
+          "ortalama_soru": 1.33,
+          "ders_ici_yuzde": 10.3,
+          "sinav_yuzdesi": 0.67,
+          "son_3_sinav_ort": 1.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 6,
+          "ders": "Anatomi",
+          "bolum": "Temel Bilimler",
+          "konu": "Gastrointestinal Sistem",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 3,
+            "2025 Mart": 2,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 10,
+          "ortalama_soru": 1.67,
+          "ders_ici_yuzde": 12.8,
+          "sinav_yuzdesi": 0.83,
+          "son_3_sinav_ort": 2.33,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 7,
+          "ders": "Anatomi",
+          "bolum": "Temel Bilimler",
+          "konu": "Ürogenital Sistem",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 2,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 7,
+          "ortalama_soru": 1.17,
+          "ders_ici_yuzde": 9.0,
+          "sinav_yuzdesi": 0.58,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 8,
+          "ders": "Anatomi",
+          "bolum": "Temel Bilimler",
+          "konu": "Nöroanatomi",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 3,
+            "2025 Mart": 4,
+            "2024 Ağustos": 4,
+            "2024 Mart": 5,
+            "2023 Eylül": 5
+          },
+          "toplam_6_sinav": 23,
+          "ortalama_soru": 3.83,
+          "ders_ici_yuzde": 29.5,
+          "sinav_yuzdesi": 1.92,
+          "son_3_sinav_ort": 3.0,
+          "oncelik": "Yüksek"
+        }
+      ]
+    },
+    {
+      "ders": "Fizyoloji-Histoloji-Embriyoloji",
+      "bolum": "Temel Bilimler",
+      "sinavdaki_soru": 15,
+      "konu_sayisi": 11,
+      "konular": [
+        {
+          "id": 9,
+          "ders": "Fizyoloji-Histoloji-Embriyoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Hücre",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 2,
+            "2025 Mart": 2,
+            "2024 Ağustos": 1,
+            "2024 Mart": 2,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 8,
+          "ortalama_soru": 1.33,
+          "ders_ici_yuzde": 8.9,
+          "sinav_yuzdesi": 0.67,
+          "son_3_sinav_ort": 1.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 10,
+          "ders": "Fizyoloji-Histoloji-Embriyoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Doku",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 2,
+            "2025 Mart": 2,
+            "2024 Ağustos": 2,
+            "2024 Mart": 2,
+            "2023 Eylül": 3
+          },
+          "toplam_6_sinav": 13,
+          "ortalama_soru": 2.17,
+          "ders_ici_yuzde": 14.4,
+          "sinav_yuzdesi": 1.08,
+          "son_3_sinav_ort": 2.0,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 11,
+          "ders": "Fizyoloji-Histoloji-Embriyoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Kas",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 5,
+          "ortalama_soru": 0.83,
+          "ders_ici_yuzde": 5.6,
+          "sinav_yuzdesi": 0.41,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 12,
+          "ders": "Fizyoloji-Histoloji-Embriyoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Genital Sistem ve Genel Embriyoloji",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 3,
+            "2025 Mart": 2,
+            "2024 Ağustos": 2,
+            "2024 Mart": 3,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 14,
+          "ortalama_soru": 2.33,
+          "ders_ici_yuzde": 15.6,
+          "sinav_yuzdesi": 1.17,
+          "son_3_sinav_ort": 2.33,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 13,
+          "ders": "Fizyoloji-Histoloji-Embriyoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Hemopoetik Sistem",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 0,
+            "2024 Ağustos": 1,
+            "2024 Mart": 0,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 3,
+          "ortalama_soru": 0.5,
+          "ders_ici_yuzde": 3.3,
+          "sinav_yuzdesi": 0.25,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 14,
+          "ders": "Fizyoloji-Histoloji-Embriyoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Gastrointestinal Sistem",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 2,
+            "2025 Mart": 1,
+            "2024 Ağustos": 0,
+            "2024 Mart": 1,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 8,
+          "ortalama_soru": 1.33,
+          "ders_ici_yuzde": 8.9,
+          "sinav_yuzdesi": 0.67,
+          "son_3_sinav_ort": 1.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 15,
+          "ders": "Fizyoloji-Histoloji-Embriyoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Kardiyovasküler Sistem",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 3,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 8,
+          "ortalama_soru": 1.33,
+          "ders_ici_yuzde": 8.9,
+          "sinav_yuzdesi": 0.67,
+          "son_3_sinav_ort": 1.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 16,
+          "ders": "Fizyoloji-Histoloji-Embriyoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Endokrin Sistem",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 0,
+            "2025 Mart": 1,
+            "2024 Ağustos": 2,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 6.7,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 17,
+          "ders": "Fizyoloji-Histoloji-Embriyoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Solunum Sistemi",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 5,
+          "ortalama_soru": 0.83,
+          "ders_ici_yuzde": 5.6,
+          "sinav_yuzdesi": 0.41,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 18,
+          "ders": "Fizyoloji-Histoloji-Embriyoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Sinir Sistemi",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 2,
+            "2025 Mart": 2,
+            "2024 Ağustos": 3,
+            "2024 Mart": 2,
+            "2023 Eylül": 3
+          },
+          "toplam_6_sinav": 15,
+          "ortalama_soru": 2.5,
+          "ders_ici_yuzde": 16.7,
+          "sinav_yuzdesi": 1.25,
+          "son_3_sinav_ort": 2.33,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 19,
+          "ders": "Fizyoloji-Histoloji-Embriyoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Üriner Sistem",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 0,
+            "2025 Mart": 0,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 5,
+          "ortalama_soru": 0.83,
+          "ders_ici_yuzde": 5.6,
+          "sinav_yuzdesi": 0.41,
+          "son_3_sinav_ort": 0.33,
+          "oncelik": "Düşük"
+        }
+      ]
+    },
+    {
+      "ders": "Biyokimya",
+      "bolum": "Temel Bilimler",
+      "sinavdaki_soru": 18,
+      "konu_sayisi": 8,
+      "konular": [
+        {
+          "id": 20,
+          "ders": "Biyokimya",
+          "bolum": "Temel Bilimler",
+          "konu": "Hücre ve Organeller",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 0,
+            "2025 Mart": 0,
+            "2024 Ağustos": 0,
+            "2024 Mart": 0,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 1,
+          "ortalama_soru": 0.17,
+          "ders_ici_yuzde": 0.9,
+          "sinav_yuzdesi": 0.09,
+          "son_3_sinav_ort": 0.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 21,
+          "ders": "Biyokimya",
+          "bolum": "Temel Bilimler",
+          "konu": "Metabolizma",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 1,
+            "2025 Mart": 0,
+            "2024 Ağustos": 0,
+            "2024 Mart": 0,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 4,
+          "ortalama_soru": 0.67,
+          "ders_ici_yuzde": 3.7,
+          "sinav_yuzdesi": 0.34,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 22,
+          "ders": "Biyokimya",
+          "bolum": "Temel Bilimler",
+          "konu": "Karbonhidratlar",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 3,
+            "2025 Mart": 3,
+            "2024 Ağustos": 2,
+            "2024 Mart": 2,
+            "2023 Eylül": 3
+          },
+          "toplam_6_sinav": 15,
+          "ortalama_soru": 2.5,
+          "ders_ici_yuzde": 13.9,
+          "sinav_yuzdesi": 1.25,
+          "son_3_sinav_ort": 2.67,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 23,
+          "ders": "Biyokimya",
+          "bolum": "Temel Bilimler",
+          "konu": "Lipitler",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 2,
+            "2025 Mart": 3,
+            "2024 Ağustos": 2,
+            "2024 Mart": 6,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 18,
+          "ortalama_soru": 3.0,
+          "ders_ici_yuzde": 16.7,
+          "sinav_yuzdesi": 1.5,
+          "son_3_sinav_ort": 2.67,
+          "oncelik": "Yüksek"
+        },
+        {
+          "id": 24,
+          "ders": "Biyokimya",
+          "bolum": "Temel Bilimler",
+          "konu": "Aminoasitler ve Proteinler",
+          "dagilim": {
+            "2026 Mart": 6,
+            "2025 Ağustos": 7,
+            "2025 Mart": 8,
+            "2024 Ağustos": 8,
+            "2024 Mart": 8,
+            "2023 Eylül": 6
+          },
+          "toplam_6_sinav": 43,
+          "ortalama_soru": 7.17,
+          "ders_ici_yuzde": 39.8,
+          "sinav_yuzdesi": 3.58,
+          "son_3_sinav_ort": 7.0,
+          "oncelik": "Yüksek"
+        },
+        {
+          "id": 25,
+          "ders": "Biyokimya",
+          "bolum": "Temel Bilimler",
+          "konu": "Nükleik Asitler (Genom ve Genetik dahil)",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 8,
+          "ortalama_soru": 1.33,
+          "ders_ici_yuzde": 7.4,
+          "sinav_yuzdesi": 0.67,
+          "son_3_sinav_ort": 1.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 26,
+          "ders": "Biyokimya",
+          "bolum": "Temel Bilimler",
+          "konu": "Vitaminler ve Mineraller",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 2,
+            "2025 Mart": 1,
+            "2024 Ağustos": 2,
+            "2024 Mart": 0,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 5.6,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 1.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 27,
+          "ders": "Biyokimya",
+          "bolum": "Temel Bilimler",
+          "konu": "Hormonlar",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 2,
+            "2025 Mart": 2,
+            "2024 Ağustos": 3,
+            "2024 Mart": 1,
+            "2023 Eylül": 3
+          },
+          "toplam_6_sinav": 13,
+          "ortalama_soru": 2.17,
+          "ders_ici_yuzde": 12.0,
+          "sinav_yuzdesi": 1.08,
+          "son_3_sinav_ort": 2.0,
+          "oncelik": "Orta"
+        }
+      ]
+    },
+    {
+      "ders": "Mikrobiyoloji",
+      "bolum": "Temel Bilimler",
+      "sinavdaki_soru": 18,
+      "konu_sayisi": 6,
+      "konular": [
+        {
+          "id": 28,
+          "ders": "Mikrobiyoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Temel Mikrobiyoloji",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 2,
+            "2025 Mart": 3,
+            "2024 Ağustos": 4,
+            "2024 Mart": 4,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 18,
+          "ortalama_soru": 3.0,
+          "ders_ici_yuzde": 16.7,
+          "sinav_yuzdesi": 1.5,
+          "son_3_sinav_ort": 2.67,
+          "oncelik": "Yüksek"
+        },
+        {
+          "id": 29,
+          "ders": "Mikrobiyoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Bakteriyoloji",
+          "dagilim": {
+            "2026 Mart": 6,
+            "2025 Ağustos": 8,
+            "2025 Mart": 6,
+            "2024 Ağustos": 5,
+            "2024 Mart": 6,
+            "2023 Eylül": 7
+          },
+          "toplam_6_sinav": 38,
+          "ortalama_soru": 6.33,
+          "ders_ici_yuzde": 35.2,
+          "sinav_yuzdesi": 3.17,
+          "son_3_sinav_ort": 6.67,
+          "oncelik": "Yüksek"
+        },
+        {
+          "id": 30,
+          "ders": "Mikrobiyoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Parazitoloji",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 2,
+            "2025 Mart": 2,
+            "2024 Ağustos": 2,
+            "2024 Mart": 2,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 12,
+          "ortalama_soru": 2.0,
+          "ders_ici_yuzde": 11.1,
+          "sinav_yuzdesi": 1.0,
+          "son_3_sinav_ort": 2.0,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 31,
+          "ders": "Mikrobiyoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Mikoloji",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 2,
+            "2025 Mart": 2,
+            "2024 Ağustos": 3,
+            "2024 Mart": 2,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 13,
+          "ortalama_soru": 2.17,
+          "ders_ici_yuzde": 12.0,
+          "sinav_yuzdesi": 1.08,
+          "son_3_sinav_ort": 2.0,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 32,
+          "ders": "Mikrobiyoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Viroloji",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 3,
+            "2025 Mart": 3,
+            "2024 Ağustos": 2,
+            "2024 Mart": 3,
+            "2023 Eylül": 3
+          },
+          "toplam_6_sinav": 17,
+          "ortalama_soru": 2.83,
+          "ders_ici_yuzde": 15.7,
+          "sinav_yuzdesi": 1.42,
+          "son_3_sinav_ort": 3.0,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 33,
+          "ders": "Mikrobiyoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "İmmunoloji",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 1,
+            "2025 Mart": 2,
+            "2024 Ağustos": 2,
+            "2024 Mart": 1,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 10,
+          "ortalama_soru": 1.67,
+          "ders_ici_yuzde": 9.3,
+          "sinav_yuzdesi": 0.83,
+          "son_3_sinav_ort": 1.67,
+          "oncelik": "Orta"
+        }
+      ]
+    },
+    {
+      "ders": "Patoloji",
+      "bolum": "Temel Bilimler",
+      "sinavdaki_soru": 18,
+      "konu_sayisi": 19,
+      "konular": [
+        {
+          "id": 34,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Hücre",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 1,
+            "2025 Mart": 2,
+            "2024 Ağustos": 1,
+            "2024 Mart": 2,
+            "2023 Eylül": 3
+          },
+          "toplam_6_sinav": 9,
+          "ortalama_soru": 1.5,
+          "ders_ici_yuzde": 8.3,
+          "sinav_yuzdesi": 0.75,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 35,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "İnflamasyon",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 0,
+            "2024 Ağustos": 1,
+            "2024 Mart": 0,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 4,
+          "ortalama_soru": 0.67,
+          "ders_ici_yuzde": 3.7,
+          "sinav_yuzdesi": 0.34,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 36,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "İmmun Sistem",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 3,
+            "2024 Ağustos": 0,
+            "2024 Mart": 0,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 5.6,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 1.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 37,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Onarım ve Yara İyileşmesi",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 0,
+            "2025 Mart": 1,
+            "2024 Ağustos": 0,
+            "2024 Mart": 0,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 3,
+          "ortalama_soru": 0.5,
+          "ders_ici_yuzde": 2.8,
+          "sinav_yuzdesi": 0.25,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 38,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Hemodinamik Hastalıklar",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 0,
+            "2025 Mart": 0,
+            "2024 Ağustos": 2,
+            "2024 Mart": 0,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 4,
+          "ortalama_soru": 0.67,
+          "ders_ici_yuzde": 3.7,
+          "sinav_yuzdesi": 0.34,
+          "son_3_sinav_ort": 0.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 39,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Neoplazi",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 3,
+            "2025 Mart": 0,
+            "2024 Ağustos": 2,
+            "2024 Mart": 2,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 10,
+          "ortalama_soru": 1.67,
+          "ders_ici_yuzde": 9.3,
+          "sinav_yuzdesi": 0.83,
+          "son_3_sinav_ort": 1.67,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 40,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Solunum Sistemi",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 0,
+            "2025 Mart": 1,
+            "2024 Ağustos": 2,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 7,
+          "ortalama_soru": 1.17,
+          "ders_ici_yuzde": 6.5,
+          "sinav_yuzdesi": 0.58,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 41,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Kardiyovasküler Sistem",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 4,
+          "ortalama_soru": 0.67,
+          "ders_ici_yuzde": 3.7,
+          "sinav_yuzdesi": 0.34,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 42,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Hemopoetik Sistem",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 0,
+            "2024 Mart": 1,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 4,
+          "ortalama_soru": 0.67,
+          "ders_ici_yuzde": 3.7,
+          "sinav_yuzdesi": 0.34,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 43,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Gastrointestinal Sistem",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 1,
+            "2025 Mart": 2,
+            "2024 Ağustos": 1,
+            "2024 Mart": 2,
+            "2023 Eylül": 3
+          },
+          "toplam_6_sinav": 11,
+          "ortalama_soru": 1.83,
+          "ders_ici_yuzde": 10.2,
+          "sinav_yuzdesi": 0.92,
+          "son_3_sinav_ort": 1.67,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 44,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Hepatobilier Sistem",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 0,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 2,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 5,
+          "ortalama_soru": 0.83,
+          "ders_ici_yuzde": 4.6,
+          "sinav_yuzdesi": 0.41,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 45,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Üriner Sistem",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 0,
+            "2024 Ağustos": 1,
+            "2024 Mart": 2,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 7,
+          "ortalama_soru": 1.17,
+          "ders_ici_yuzde": 6.5,
+          "sinav_yuzdesi": 0.58,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 46,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Endokrin Sistem",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 2,
+            "2025 Mart": 1,
+            "2024 Ağustos": 0,
+            "2024 Mart": 0,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 3,
+          "ortalama_soru": 0.5,
+          "ders_ici_yuzde": 2.8,
+          "sinav_yuzdesi": 0.25,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 47,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Kadın Genital Sistemi",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 0,
+            "2024 Mart": 2,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 5.6,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 48,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Erkek Genital Sistemi",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 0,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 4,
+          "ortalama_soru": 0.67,
+          "ders_ici_yuzde": 3.7,
+          "sinav_yuzdesi": 0.34,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 49,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Meme Hastalıkları",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 2,
+            "2024 Mart": 0,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 5.6,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 50,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Sinir Sistemi",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 0,
+            "2024 Ağustos": 0,
+            "2024 Mart": 0,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 2,
+          "ortalama_soru": 0.33,
+          "ders_ici_yuzde": 1.9,
+          "sinav_yuzdesi": 0.17,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 51,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Kas İskelet Sistemi",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 2,
+            "2024 Mart": 2,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 7,
+          "ortalama_soru": 1.17,
+          "ders_ici_yuzde": 6.5,
+          "sinav_yuzdesi": 0.58,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 52,
+          "ders": "Patoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Deri Hastalıkları",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 5.6,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        }
+      ]
+    },
+    {
+      "ders": "Farmakoloji",
+      "bolum": "Temel Bilimler",
+      "sinavdaki_soru": 18,
+      "konu_sayisi": 11,
+      "konular": [
+        {
+          "id": 53,
+          "ders": "Farmakoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Genel Farmakoloji",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 2,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 8,
+          "ortalama_soru": 1.33,
+          "ders_ici_yuzde": 7.4,
+          "sinav_yuzdesi": 0.67,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 54,
+          "ders": "Farmakoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Otonom Sinir Sistemi",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 2,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 9,
+          "ortalama_soru": 1.5,
+          "ders_ici_yuzde": 8.3,
+          "sinav_yuzdesi": 0.75,
+          "son_3_sinav_ort": 1.67,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 55,
+          "ders": "Farmakoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Santral Sinir Sistemi",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 3,
+            "2025 Mart": 3,
+            "2024 Ağustos": 3,
+            "2024 Mart": 4,
+            "2023 Eylül": 3
+          },
+          "toplam_6_sinav": 19,
+          "ortalama_soru": 3.17,
+          "ders_ici_yuzde": 17.6,
+          "sinav_yuzdesi": 1.58,
+          "son_3_sinav_ort": 3.0,
+          "oncelik": "Yüksek"
+        },
+        {
+          "id": 56,
+          "ders": "Farmakoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Kardiyovasküler Sistem",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 2,
+            "2025 Mart": 2,
+            "2024 Ağustos": 2,
+            "2024 Mart": 1,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 12,
+          "ortalama_soru": 2.0,
+          "ders_ici_yuzde": 11.1,
+          "sinav_yuzdesi": 1.0,
+          "son_3_sinav_ort": 2.33,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 57,
+          "ders": "Farmakoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Solunum Sistemi",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 1,
+            "2025 Mart": 0,
+            "2024 Ağustos": 0,
+            "2024 Mart": 0,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 2,
+          "ortalama_soru": 0.33,
+          "ders_ici_yuzde": 1.9,
+          "sinav_yuzdesi": 0.17,
+          "son_3_sinav_ort": 0.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 58,
+          "ders": "Farmakoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Gastrointestinal Sistem",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 0,
+            "2025 Mart": 2,
+            "2024 Ağustos": 2,
+            "2024 Mart": 0,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 5,
+          "ortalama_soru": 0.83,
+          "ders_ici_yuzde": 4.6,
+          "sinav_yuzdesi": 0.41,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 59,
+          "ders": "Farmakoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Endokrin Sistem",
+          "dagilim": {
+            "2026 Mart": 4,
+            "2025 Ağustos": 4,
+            "2025 Mart": 2,
+            "2024 Ağustos": 3,
+            "2024 Mart": 3,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 18,
+          "ortalama_soru": 3.0,
+          "ders_ici_yuzde": 16.7,
+          "sinav_yuzdesi": 1.5,
+          "son_3_sinav_ort": 3.33,
+          "oncelik": "Yüksek"
+        },
+        {
+          "id": 60,
+          "ders": "Farmakoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Otakoidler",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 0,
+            "2025 Mart": 1,
+            "2024 Ağustos": 0,
+            "2024 Mart": 0,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 1,
+          "ortalama_soru": 0.17,
+          "ders_ici_yuzde": 0.9,
+          "sinav_yuzdesi": 0.09,
+          "son_3_sinav_ort": 0.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 61,
+          "ders": "Farmakoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "NSAİİ",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 0,
+            "2025 Mart": 0,
+            "2024 Ağustos": 0,
+            "2024 Mart": 1,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 1,
+          "ortalama_soru": 0.17,
+          "ders_ici_yuzde": 0.9,
+          "sinav_yuzdesi": 0.09,
+          "son_3_sinav_ort": 0.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 62,
+          "ders": "Farmakoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Kemoterapotikler",
+          "dagilim": {
+            "2026 Mart": 4,
+            "2025 Ağustos": 3,
+            "2025 Mart": 5,
+            "2024 Ağustos": 5,
+            "2024 Mart": 5,
+            "2023 Eylül": 5
+          },
+          "toplam_6_sinav": 27,
+          "ortalama_soru": 4.5,
+          "ders_ici_yuzde": 25.0,
+          "sinav_yuzdesi": 2.25,
+          "son_3_sinav_ort": 4.0,
+          "oncelik": "Yüksek"
+        },
+        {
+          "id": 63,
+          "ders": "Farmakoloji",
+          "bolum": "Temel Bilimler",
+          "konu": "Toksikoloji",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 2,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 5.6,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 1.33,
+          "oncelik": "Düşük"
+        }
+      ]
+    },
+    {
+      "ders": "Dahiliye",
+      "bolum": "Klinik Bilimler",
+      "sinavdaki_soru": 23,
+      "konu_sayisi": 12,
+      "konular": [
+        {
+          "id": 64,
+          "ders": "Dahiliye",
+          "bolum": "Klinik Bilimler",
+          "konu": "Hematoloji",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 1,
+            "2025 Mart": 2,
+            "2024 Ağustos": 2,
+            "2024 Mart": 2,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 11,
+          "ortalama_soru": 1.83,
+          "ders_ici_yuzde": 8.0,
+          "sinav_yuzdesi": 0.92,
+          "son_3_sinav_ort": 1.67,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 65,
+          "ders": "Dahiliye",
+          "bolum": "Klinik Bilimler",
+          "konu": "Onkoloji",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 1,
+            "2025 Mart": 2,
+            "2024 Ağustos": 2,
+            "2024 Mart": 2,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 11,
+          "ortalama_soru": 1.83,
+          "ders_ici_yuzde": 8.0,
+          "sinav_yuzdesi": 0.92,
+          "son_3_sinav_ort": 1.67,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 66,
+          "ders": "Dahiliye",
+          "bolum": "Klinik Bilimler",
+          "konu": "Nefroloji",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 2,
+            "2025 Mart": 2,
+            "2024 Ağustos": 2,
+            "2024 Mart": 2,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 13,
+          "ortalama_soru": 2.17,
+          "ders_ici_yuzde": 9.4,
+          "sinav_yuzdesi": 1.08,
+          "son_3_sinav_ort": 2.33,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 67,
+          "ders": "Dahiliye",
+          "bolum": "Klinik Bilimler",
+          "konu": "Kardiyoloji",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 3,
+            "2025 Mart": 3,
+            "2024 Ağustos": 3,
+            "2024 Mart": 2,
+            "2023 Eylül": 3
+          },
+          "toplam_6_sinav": 17,
+          "ortalama_soru": 2.83,
+          "ders_ici_yuzde": 12.3,
+          "sinav_yuzdesi": 1.42,
+          "son_3_sinav_ort": 3.0,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 68,
+          "ders": "Dahiliye",
+          "bolum": "Klinik Bilimler",
+          "konu": "Göğüs Hastalıkları",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 2,
+            "2025 Mart": 2,
+            "2024 Ağustos": 2,
+            "2024 Mart": 3,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 13,
+          "ortalama_soru": 2.17,
+          "ders_ici_yuzde": 9.4,
+          "sinav_yuzdesi": 1.08,
+          "son_3_sinav_ort": 2.0,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 69,
+          "ders": "Dahiliye",
+          "bolum": "Klinik Bilimler",
+          "konu": "Gastroenteroloji",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 2,
+            "2025 Mart": 0,
+            "2024 Ağustos": 2,
+            "2024 Mart": 2,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 8,
+          "ortalama_soru": 1.33,
+          "ders_ici_yuzde": 5.8,
+          "sinav_yuzdesi": 0.67,
+          "son_3_sinav_ort": 1.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 70,
+          "ders": "Dahiliye",
+          "bolum": "Klinik Bilimler",
+          "konu": "Hepatoloji",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 3,
+            "2025 Mart": 3,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 3
+          },
+          "toplam_6_sinav": 12,
+          "ortalama_soru": 2.0,
+          "ders_ici_yuzde": 8.7,
+          "sinav_yuzdesi": 1.0,
+          "son_3_sinav_ort": 2.33,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 71,
+          "ders": "Dahiliye",
+          "bolum": "Klinik Bilimler",
+          "konu": "Endokrin",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 2,
+            "2025 Mart": 2,
+            "2024 Ağustos": 2,
+            "2024 Mart": 2,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 11,
+          "ortalama_soru": 1.83,
+          "ders_ici_yuzde": 8.0,
+          "sinav_yuzdesi": 0.92,
+          "son_3_sinav_ort": 1.67,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 72,
+          "ders": "Dahiliye",
+          "bolum": "Klinik Bilimler",
+          "konu": "Romatoloji",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 3,
+            "2025 Mart": 2,
+            "2024 Ağustos": 2,
+            "2024 Mart": 2,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 14,
+          "ortalama_soru": 2.33,
+          "ders_ici_yuzde": 10.1,
+          "sinav_yuzdesi": 1.17,
+          "son_3_sinav_ort": 2.67,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 73,
+          "ders": "Dahiliye",
+          "bolum": "Klinik Bilimler",
+          "konu": "Enfeksiyon Hastalıkları",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 3,
+            "2025 Mart": 3,
+            "2024 Ağustos": 3,
+            "2024 Mart": 3,
+            "2023 Eylül": 3
+          },
+          "toplam_6_sinav": 18,
+          "ortalama_soru": 3.0,
+          "ders_ici_yuzde": 13.0,
+          "sinav_yuzdesi": 1.5,
+          "son_3_sinav_ort": 3.0,
+          "oncelik": "Yüksek"
+        },
+        {
+          "id": 74,
+          "ders": "Dahiliye",
+          "bolum": "Klinik Bilimler",
+          "konu": "Allerji-İmmunoloji",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 0,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 4,
+          "ortalama_soru": 0.67,
+          "ders_ici_yuzde": 2.9,
+          "sinav_yuzdesi": 0.34,
+          "son_3_sinav_ort": 0.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 75,
+          "ders": "Dahiliye",
+          "bolum": "Klinik Bilimler",
+          "konu": "Geriatri",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 4.3,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        }
+      ]
+    },
+    {
+      "ders": "Pediatri",
+      "bolum": "Klinik Bilimler",
+      "sinavdaki_soru": 25,
+      "konu_sayisi": 22,
+      "konular": [
+        {
+          "id": 76,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Yenidoğan",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 3,
+            "2025 Mart": 2,
+            "2024 Ağustos": 2,
+            "2024 Mart": 2,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 13,
+          "ortalama_soru": 2.17,
+          "ders_ici_yuzde": 8.7,
+          "sinav_yuzdesi": 1.08,
+          "son_3_sinav_ort": 2.33,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 77,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Genetik",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 0,
+            "2025 Mart": 0,
+            "2024 Ağustos": 2,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 4.0,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 78,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Büyüme ve Gelişme",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 0,
+            "2025 Mart": 2,
+            "2024 Ağustos": 2,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 7,
+          "ortalama_soru": 1.17,
+          "ders_ici_yuzde": 4.7,
+          "sinav_yuzdesi": 0.58,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 79,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Beslenme",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 0,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 4,
+          "ortalama_soru": 0.67,
+          "ders_ici_yuzde": 2.7,
+          "sinav_yuzdesi": 0.34,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 80,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Gastroenteroloji ve Hepatoloji",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 2,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 2,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 10,
+          "ortalama_soru": 1.67,
+          "ders_ici_yuzde": 6.7,
+          "sinav_yuzdesi": 0.83,
+          "son_3_sinav_ort": 2.0,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 81,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Nöroloji",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 2,
+            "2025 Mart": 0,
+            "2024 Ağustos": 2,
+            "2024 Mart": 2,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 9,
+          "ortalama_soru": 1.5,
+          "ders_ici_yuzde": 6.0,
+          "sinav_yuzdesi": 0.75,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 82,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Kardiyoloji",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 1,
+            "2025 Mart": 2,
+            "2024 Ağustos": 3,
+            "2024 Mart": 3,
+            "2023 Eylül": 3
+          },
+          "toplam_6_sinav": 14,
+          "ortalama_soru": 2.33,
+          "ders_ici_yuzde": 9.3,
+          "sinav_yuzdesi": 1.17,
+          "son_3_sinav_ort": 1.67,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 83,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Göğüs Hastalıkları",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 2,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 8,
+          "ortalama_soru": 1.33,
+          "ders_ici_yuzde": 5.3,
+          "sinav_yuzdesi": 0.67,
+          "son_3_sinav_ort": 1.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 84,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Döküntülü Hastalıklar",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 1,
+            "2025 Mart": 0,
+            "2024 Ağustos": 0,
+            "2024 Mart": 0,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 2,
+          "ortalama_soru": 0.33,
+          "ders_ici_yuzde": 1.3,
+          "sinav_yuzdesi": 0.17,
+          "son_3_sinav_ort": 0.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 85,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Bağışıklama",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 1,
+            "2025 Mart": 0,
+            "2024 Ağustos": 1,
+            "2024 Mart": 0,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 3,
+          "ortalama_soru": 0.5,
+          "ders_ici_yuzde": 2.0,
+          "sinav_yuzdesi": 0.25,
+          "son_3_sinav_ort": 0.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 86,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Allerji",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 0,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 4,
+          "ortalama_soru": 0.67,
+          "ders_ici_yuzde": 2.7,
+          "sinav_yuzdesi": 0.34,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 87,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "İmmunoloji",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 2,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 7,
+          "ortalama_soru": 1.17,
+          "ders_ici_yuzde": 4.7,
+          "sinav_yuzdesi": 0.58,
+          "son_3_sinav_ort": 1.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 88,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Enfeksiyon Hastalıkları",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 0,
+            "2025 Mart": 2,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 5,
+          "ortalama_soru": 0.83,
+          "ders_ici_yuzde": 3.3,
+          "sinav_yuzdesi": 0.41,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 89,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Endokrinoloji",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 1,
+            "2025 Mart": 2,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 8,
+          "ortalama_soru": 1.33,
+          "ders_ici_yuzde": 5.3,
+          "sinav_yuzdesi": 0.67,
+          "son_3_sinav_ort": 1.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 90,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Metabolik Hastalıklar",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 2,
+            "2024 Ağustos": 1,
+            "2024 Mart": 2,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 8,
+          "ortalama_soru": 1.33,
+          "ders_ici_yuzde": 5.3,
+          "sinav_yuzdesi": 0.67,
+          "son_3_sinav_ort": 1.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 91,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Hematoloji",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 1,
+            "2025 Mart": 0,
+            "2024 Ağustos": 0,
+            "2024 Mart": 2,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 7,
+          "ortalama_soru": 1.17,
+          "ders_ici_yuzde": 4.7,
+          "sinav_yuzdesi": 0.58,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 92,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Onkoloji",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 2,
+            "2025 Mart": 2,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 4.0,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 1.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 93,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Nefroloji",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 3,
+            "2025 Mart": 2,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 11,
+          "ortalama_soru": 1.83,
+          "ders_ici_yuzde": 7.3,
+          "sinav_yuzdesi": 0.92,
+          "son_3_sinav_ort": 2.33,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 94,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Romatoloji",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 4.0,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 95,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Acil Tıp, Zehirlenmeler ve Yoğun Bakım",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 7,
+          "ortalama_soru": 1.17,
+          "ders_ici_yuzde": 4.7,
+          "sinav_yuzdesi": 0.58,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 96,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Çocuk Psikiyatrisi",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 5,
+          "ortalama_soru": 0.83,
+          "ders_ici_yuzde": 3.3,
+          "sinav_yuzdesi": 0.41,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 97,
+          "ders": "Pediatri",
+          "bolum": "Klinik Bilimler",
+          "konu": "Çocuk Cerrahisi",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 0,
+            "2025 Mart": 0,
+            "2024 Ağustos": 0,
+            "2024 Mart": 0,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 0,
+          "ortalama_soru": 0.0,
+          "ders_ici_yuzde": 0.0,
+          "sinav_yuzdesi": 0.0,
+          "son_3_sinav_ort": 0.0,
+          "oncelik": "Düşük"
+        }
+      ]
+    },
+    {
+      "ders": "Genel Cerrahi",
+      "bolum": "Klinik Bilimler",
+      "sinavdaki_soru": 20,
+      "konu_sayisi": 17,
+      "konular": [
+        {
+          "id": 98,
+          "ders": "Genel Cerrahi",
+          "bolum": "Klinik Bilimler",
+          "konu": "Temel Cerrahi",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 5,
+            "2025 Mart": 7,
+            "2024 Ağustos": 7,
+            "2024 Mart": 5,
+            "2023 Eylül": 5
+          },
+          "toplam_6_sinav": 32,
+          "ortalama_soru": 5.33,
+          "ders_ici_yuzde": 26.7,
+          "sinav_yuzdesi": 2.67,
+          "son_3_sinav_ort": 5.0,
+          "oncelik": "Yüksek"
+        },
+        {
+          "id": 99,
+          "ders": "Genel Cerrahi",
+          "bolum": "Klinik Bilimler",
+          "konu": "Meme Hastalıkları",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 2,
+            "2025 Mart": 2,
+            "2024 Ağustos": 2,
+            "2024 Mart": 2,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 12,
+          "ortalama_soru": 2.0,
+          "ders_ici_yuzde": 10.0,
+          "sinav_yuzdesi": 1.0,
+          "son_3_sinav_ort": 2.0,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 100,
+          "ders": "Genel Cerrahi",
+          "bolum": "Klinik Bilimler",
+          "konu": "Tiroid Hastalıkları",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 2,
+            "2024 Mart": 0,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 7,
+          "ortalama_soru": 1.17,
+          "ders_ici_yuzde": 5.8,
+          "sinav_yuzdesi": 0.58,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 101,
+          "ders": "Genel Cerrahi",
+          "bolum": "Klinik Bilimler",
+          "konu": "Paratiroid Hastalıkları",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 0,
+            "2024 Mart": 0,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 2,
+          "ortalama_soru": 0.33,
+          "ders_ici_yuzde": 1.7,
+          "sinav_yuzdesi": 0.17,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 102,
+          "ders": "Genel Cerrahi",
+          "bolum": "Klinik Bilimler",
+          "konu": "Adrenal Bez Hastalıkları",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 0,
+            "2025 Mart": 0,
+            "2024 Ağustos": 0,
+            "2024 Mart": 2,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 2,
+          "ortalama_soru": 0.33,
+          "ders_ici_yuzde": 1.7,
+          "sinav_yuzdesi": 0.17,
+          "son_3_sinav_ort": 0.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 103,
+          "ders": "Genel Cerrahi",
+          "bolum": "Klinik Bilimler",
+          "konu": "Özefagus",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 0,
+            "2024 Mart": 0,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 3,
+          "ortalama_soru": 0.5,
+          "ders_ici_yuzde": 2.5,
+          "sinav_yuzdesi": 0.25,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 104,
+          "ders": "Genel Cerrahi",
+          "bolum": "Klinik Bilimler",
+          "konu": "Mide",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 1,
+            "2025 Mart": 2,
+            "2024 Ağustos": 3,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 8,
+          "ortalama_soru": 1.33,
+          "ders_ici_yuzde": 6.7,
+          "sinav_yuzdesi": 0.67,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 105,
+          "ders": "Genel Cerrahi",
+          "bolum": "Klinik Bilimler",
+          "konu": "İnce Barsak",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 2,
+            "2025 Mart": 0,
+            "2024 Ağustos": 0,
+            "2024 Mart": 2,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 8,
+          "ortalama_soru": 1.33,
+          "ders_ici_yuzde": 6.7,
+          "sinav_yuzdesi": 0.67,
+          "son_3_sinav_ort": 1.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 106,
+          "ders": "Genel Cerrahi",
+          "bolum": "Klinik Bilimler",
+          "konu": "Kolorektal",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 2,
+            "2023 Eylül": 3
+          },
+          "toplam_6_sinav": 10,
+          "ortalama_soru": 1.67,
+          "ders_ici_yuzde": 8.3,
+          "sinav_yuzdesi": 0.83,
+          "son_3_sinav_ort": 1.33,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 107,
+          "ders": "Genel Cerrahi",
+          "bolum": "Klinik Bilimler",
+          "konu": "Appendiks",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 0,
+            "2025 Mart": 0,
+            "2024 Ağustos": 0,
+            "2024 Mart": 0,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 1,
+          "ortalama_soru": 0.17,
+          "ders_ici_yuzde": 0.8,
+          "sinav_yuzdesi": 0.09,
+          "son_3_sinav_ort": 0.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 108,
+          "ders": "Genel Cerrahi",
+          "bolum": "Klinik Bilimler",
+          "konu": "Anal Kanal ve Perianal Bölge",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 0,
+            "2025 Mart": 0,
+            "2024 Ağustos": 0,
+            "2024 Mart": 0,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 2,
+          "ortalama_soru": 0.33,
+          "ders_ici_yuzde": 1.7,
+          "sinav_yuzdesi": 0.17,
+          "son_3_sinav_ort": 0.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 109,
+          "ders": "Genel Cerrahi",
+          "bolum": "Klinik Bilimler",
+          "konu": "Karaciğer",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 2,
+            "2025 Mart": 0,
+            "2024 Ağustos": 1,
+            "2024 Mart": 2,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 5.0,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 110,
+          "ders": "Genel Cerrahi",
+          "bolum": "Klinik Bilimler",
+          "konu": "Safra Yolu ve Safra Kesesi",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 7,
+          "ortalama_soru": 1.17,
+          "ders_ici_yuzde": 5.8,
+          "sinav_yuzdesi": 0.58,
+          "son_3_sinav_ort": 1.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 111,
+          "ders": "Genel Cerrahi",
+          "bolum": "Klinik Bilimler",
+          "konu": "Pankreas",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 8,
+          "ortalama_soru": 1.33,
+          "ders_ici_yuzde": 6.7,
+          "sinav_yuzdesi": 0.67,
+          "son_3_sinav_ort": 1.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 112,
+          "ders": "Genel Cerrahi",
+          "bolum": "Klinik Bilimler",
+          "konu": "Dalak",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 7,
+          "ortalama_soru": 1.17,
+          "ders_ici_yuzde": 5.8,
+          "sinav_yuzdesi": 0.58,
+          "son_3_sinav_ort": 1.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 113,
+          "ders": "Genel Cerrahi",
+          "bolum": "Klinik Bilimler",
+          "konu": "Karın Duvarı, Periton, Retroperiton ve Mezenter",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 0,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 0,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 2,
+          "ortalama_soru": 0.33,
+          "ders_ici_yuzde": 1.7,
+          "sinav_yuzdesi": 0.17,
+          "son_3_sinav_ort": 0.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 114,
+          "ders": "Genel Cerrahi",
+          "bolum": "Klinik Bilimler",
+          "konu": "Fıtık",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 0,
+            "2024 Mart": 1,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 3,
+          "ortalama_soru": 0.5,
+          "ders_ici_yuzde": 2.5,
+          "sinav_yuzdesi": 0.25,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        }
+      ],
+      "temel_cerrahi_alt_basliklar_dagilimsiz": [
+        "Sıvı-Elektrolit ve Asit-Baz",
+        "Beslenme",
+        "Travmaya Yanıt",
+        "Şok",
+        "Cerrahi Enfeksiyonlar",
+        "Yara İyileşmesi",
+        "Hemostaz ve Transfüzyon",
+        "Travmalı Hastaya Yaklaşım",
+        "Yanık",
+        "Transplantasyon",
+        "Tıp Etiği",
+        "Temel Cerrahi-Diğer"
+      ]
+    },
+    {
+      "ders": "Küçük Stajlar",
+      "bolum": "Klinik Bilimler",
+      "sinavdaki_soru": 22,
+      "konu_sayisi": 19,
+      "konular": [
+        {
+          "id": 115,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "Nöroloji",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 2,
+            "2025 Mart": 3,
+            "2024 Ağustos": 3,
+            "2024 Mart": 1,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 14,
+          "ortalama_soru": 2.33,
+          "ders_ici_yuzde": 10.6,
+          "sinav_yuzdesi": 1.17,
+          "son_3_sinav_ort": 2.67,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 116,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "Beyin Cerrahisi",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 2,
+            "2024 Ağustos": 1,
+            "2024 Mart": 2,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 8,
+          "ortalama_soru": 1.33,
+          "ders_ici_yuzde": 6.1,
+          "sinav_yuzdesi": 0.67,
+          "son_3_sinav_ort": 1.33,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 117,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "Psikiyatri",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 2,
+            "2025 Mart": 2,
+            "2024 Ağustos": 1,
+            "2024 Mart": 2,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 11,
+          "ortalama_soru": 1.83,
+          "ders_ici_yuzde": 8.3,
+          "sinav_yuzdesi": 0.92,
+          "son_3_sinav_ort": 2.0,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 118,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "Halk Sağlığı",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 4.5,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 119,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "Dermatoloji",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 2,
+            "2025 Mart": 2,
+            "2024 Ağustos": 2,
+            "2024 Mart": 2,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 13,
+          "ortalama_soru": 2.17,
+          "ders_ici_yuzde": 9.8,
+          "sinav_yuzdesi": 1.08,
+          "son_3_sinav_ort": 2.33,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 120,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "Radyoloji",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 5,
+          "ortalama_soru": 0.83,
+          "ders_ici_yuzde": 3.8,
+          "sinav_yuzdesi": 0.41,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 121,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "Nükleer Tıp",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 4.5,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 122,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "KBB",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 2,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 7,
+          "ortalama_soru": 1.17,
+          "ders_ici_yuzde": 5.3,
+          "sinav_yuzdesi": 0.58,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 123,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "Göz Hastalıkları",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 4.5,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 124,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "Ortopedi",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 2,
+            "2025 Mart": 2,
+            "2024 Ağustos": 1,
+            "2024 Mart": 2,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 10,
+          "ortalama_soru": 1.67,
+          "ders_ici_yuzde": 7.6,
+          "sinav_yuzdesi": 0.83,
+          "son_3_sinav_ort": 2.0,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 125,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "FTR",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 2,
+            "2025 Mart": 0,
+            "2024 Ağustos": 2,
+            "2024 Mart": 0,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 5,
+          "ortalama_soru": 0.83,
+          "ders_ici_yuzde": 3.8,
+          "sinav_yuzdesi": 0.41,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 126,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "Üroloji",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 4.5,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 127,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "Çocuk Cerrahisi",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 4.5,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 128,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "Kalp Damar Cerrahisi",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 2,
+            "2024 Mart": 2,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 8,
+          "ortalama_soru": 1.33,
+          "ders_ici_yuzde": 6.1,
+          "sinav_yuzdesi": 0.67,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 129,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "Göğüs Cerrahisi",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 0,
+            "2025 Mart": 1,
+            "2024 Ağustos": 0,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 4,
+          "ortalama_soru": 0.67,
+          "ders_ici_yuzde": 3.0,
+          "sinav_yuzdesi": 0.34,
+          "son_3_sinav_ort": 0.67,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 130,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "Plastik Cerrahi",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 0,
+            "2025 Mart": 0,
+            "2024 Ağustos": 0,
+            "2024 Mart": 0,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 0,
+          "ortalama_soru": 0.0,
+          "ders_ici_yuzde": 0.0,
+          "sinav_yuzdesi": 0.0,
+          "son_3_sinav_ort": 0.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 131,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "Anestezi",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 1,
+            "2023 Eylül": 1
+          },
+          "toplam_6_sinav": 6,
+          "ortalama_soru": 1.0,
+          "ders_ici_yuzde": 4.5,
+          "sinav_yuzdesi": 0.5,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Düşük"
+        },
+        {
+          "id": 132,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "Acil Tıp ve Zehirlenmeler",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 2,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 2,
+            "2023 Eylül": 3
+          },
+          "toplam_6_sinav": 11,
+          "ortalama_soru": 1.83,
+          "ders_ici_yuzde": 8.3,
+          "sinav_yuzdesi": 0.92,
+          "son_3_sinav_ort": 1.67,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 133,
+          "ders": "Küçük Stajlar",
+          "bolum": "Klinik Bilimler",
+          "konu": "Adli Tıp",
+          "dagilim": {
+            "2026 Mart": 0,
+            "2025 Ağustos": 0,
+            "2025 Mart": 0,
+            "2024 Ağustos": 0,
+            "2024 Mart": 0,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 0,
+          "ortalama_soru": 0.0,
+          "ders_ici_yuzde": 0.0,
+          "sinav_yuzdesi": 0.0,
+          "son_3_sinav_ort": 0.0,
+          "oncelik": "Düşük"
+        }
+      ]
+    },
+    {
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "bolum": "Klinik Bilimler",
+      "sinavdaki_soru": 10,
+      "konu_sayisi": 4,
+      "konular": [
+        {
+          "id": 134,
+          "ders": "Kadın Hastalıkları ve Doğum",
+          "bolum": "Klinik Bilimler",
+          "konu": "Onkoloji",
+          "dagilim": {
+            "2026 Mart": 2,
+            "2025 Ağustos": 3,
+            "2025 Mart": 2,
+            "2024 Ağustos": 3,
+            "2024 Mart": 1,
+            "2023 Eylül": 0
+          },
+          "toplam_6_sinav": 11,
+          "ortalama_soru": 1.83,
+          "ders_ici_yuzde": 18.3,
+          "sinav_yuzdesi": 0.92,
+          "son_3_sinav_ort": 2.33,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 135,
+          "ders": "Kadın Hastalıkları ve Doğum",
+          "bolum": "Klinik Bilimler",
+          "konu": "Endokrinoloji",
+          "dagilim": {
+            "2026 Mart": 3,
+            "2025 Ağustos": 3,
+            "2025 Mart": 3,
+            "2024 Ağustos": 2,
+            "2024 Mart": 2,
+            "2023 Eylül": 4
+          },
+          "toplam_6_sinav": 17,
+          "ortalama_soru": 2.83,
+          "ders_ici_yuzde": 28.3,
+          "sinav_yuzdesi": 1.42,
+          "son_3_sinav_ort": 3.0,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 136,
+          "ders": "Kadın Hastalıkları ve Doğum",
+          "bolum": "Klinik Bilimler",
+          "konu": "Jinekoloji",
+          "dagilim": {
+            "2026 Mart": 1,
+            "2025 Ağustos": 1,
+            "2025 Mart": 1,
+            "2024 Ağustos": 1,
+            "2024 Mart": 3,
+            "2023 Eylül": 2
+          },
+          "toplam_6_sinav": 9,
+          "ortalama_soru": 1.5,
+          "ders_ici_yuzde": 15.0,
+          "sinav_yuzdesi": 0.75,
+          "son_3_sinav_ort": 1.0,
+          "oncelik": "Orta"
+        },
+        {
+          "id": 137,
+          "ders": "Kadın Hastalıkları ve Doğum",
+          "bolum": "Klinik Bilimler",
+          "konu": "Obstetri",
+          "dagilim": {
+            "2026 Mart": 4,
+            "2025 Ağustos": 3,
+            "2025 Mart": 4,
+            "2024 Ağustos": 4,
+            "2024 Mart": 4,
+            "2023 Eylül": 4
+          },
+          "toplam_6_sinav": 23,
+          "ortalama_soru": 3.83,
+          "ders_ici_yuzde": 38.3,
+          "sinav_yuzdesi": 1.92,
+          "son_3_sinav_ort": 3.67,
+          "oncelik": "Yüksek"
+        }
+      ]
+    }
+  ]
+}
