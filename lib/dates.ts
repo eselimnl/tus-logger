@@ -1,5 +1,6 @@
 export const TZ = "Europe/Istanbul";
-export const EXAM_DATE = "2027-03-21";
+export const EXAM_DATE = "2027-03-29";
+export const EXAM_LABEL = "29 Mart 2027";
 
 const fmt = new Intl.DateTimeFormat("en-CA", { timeZone: TZ });
 

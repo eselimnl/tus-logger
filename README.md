@@ -1,6 +1,6 @@
 # TUS Takip
 
-TUS 2027 (21 Mart 2027) için konu, tekrar ve soru takip uygulaması. Mobil öncelikli PWA.
+TUS 2027 (29 Mart 2027) için konu, tekrar ve soru takip uygulaması. Mobil öncelikli PWA.
 Next.js 16 + Supabase (Postgres + Auth) + Vercel.
 
 ## Ne yapar

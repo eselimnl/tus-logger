@@ -10,6 +10,7 @@
   --accent-soft: #d9efec;
   --warn: #b45309;
   --warn-soft: #fdecd0;
+  --soru: #6e56cf;
 }
 
 @theme inline {
@@ -22,6 +23,7 @@
   --color-accent-soft: var(--accent-soft);
   --color-warn: var(--warn);
   --color-warn-soft: var(--warn-soft);
+  --color-soru: var(--soru);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -37,6 +39,7 @@
     --accent-soft: #14312d;
     --warn: #f0b35a;
     --warn-soft: #3a2a10;
+    --soru: #a597ee;
   }
 }
 

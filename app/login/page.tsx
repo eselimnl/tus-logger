@@ -27,7 +27,7 @@ export default function LoginPage() {
 
   return (
     <main className="flex flex-1 flex-col justify-center px-6 py-10">
-      <p className="text-sm font-medium text-accent">TUS 2027 · 21 Mart</p>
+      <p className="text-sm font-medium text-accent">TUS 2027 · 29 Mart</p>
       <h1 className="mt-1 text-3xl font-semibold tracking-tight">TUS Takip</h1>
       <p className="mt-2 text-sm text-muted">Günlük konu, tekrar ve soru kaydın.</p>
 
