@@ -7,15 +7,19 @@ const TABS = [
   { href: "/", label: "Bugün" },
   { href: "/konular", label: "Konular" },
   { href: "/ilerleme", label: "İlerleme" },
+  { href: "/hesap", label: "Hesap" },
 ];
+
+// Giriş yapmadan görülen sayfalarda gezinme çubuğu gösterilmez.
+const HIDDEN_ON = ["/login", "/kayit", "/sifremi-unuttum", "/auth"];
 
 export default function BottomNav() {
   const pathname = usePathname();
-  if (pathname.startsWith("/login")) return null;
+  if (HIDDEN_ON.some((p) => pathname === p || pathname.startsWith(p + "/"))) return null;
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-card/95 backdrop-blur">
-      <div className="mx-auto grid max-w-md grid-cols-3 pb-[env(safe-area-inset-bottom)]">
+      <div className="mx-auto grid max-w-md grid-cols-4 pb-[env(safe-area-inset-bottom)]">
         {TABS.map((t) => {
           const active = t.href === "/" ? pathname === "/" : pathname.startsWith(t.href);
           return (

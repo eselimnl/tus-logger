@@ -17,8 +17,8 @@ Power = konunun son 6 TUS'taki ortalama soru sayısı (Yüksek ≥ 3, Orta ≥ 1
 1. supabase.com'da yeni proje aç.
 2. **SQL Editor**'a sırayla yapıştırıp çalıştır:
    `supabase/migrations/0001_init.sql`, sonra `supabase/migrations/0002_seed_topics.sql` (137 konu).
-3. **Authentication → Sign In / Providers → Email**: "Allow new users to sign up" seçeneğini **kapat**.
-4. **Authentication → Users → Add user**: kendi e-postan ve şifrenle kullanıcı oluştur ("Auto Confirm User" işaretli olsun).
+3. Kayıt, doğrulama ve şifre sıfırlama e-postaları için aşağıdaki **"Kayıt ve şifre sıfırlama kurulumu"** bölümünü uygula.
+4. İlk hesabını uygulamadaki **Hesap oluştur** ekranından aç (ya da **Authentication → Users → Add user** ile ekle, "Auto Confirm User" işaretli olsun).
 5. **Project Settings → API**: `Project URL` ve `anon public` anahtarını not al.
 
 ### 2. Vercel
@@ -30,6 +30,36 @@ Power = konunun son 6 TUS'taki ortalama soru sayısı (Yüksek ≥ 3, Orta ≥ 1
 
 ### 3. Telefonda
 Vercel adresini aç, giriş yap. iPhone: Safari → Paylaş → Ana Ekrana Ekle. Android: Chrome → Uygulamayı yükle.
+
+## Kayıt ve şifre sıfırlama kurulumu
+
+Uygulamada herkes e-postayla hesap açabilir (`/kayit`), şifresini unutan sıfırlayabilir (`/sifremi-unuttum`),
+giriş yapmış kullanıcı **Hesap** sekmesinden şifresini değiştirip çıkış yapabilir. Her kullanıcının ilerlemesi
+satır bazlı güvenlikle (RLS) yalnızca ona görünür. Bunun çalışması için Supabase tarafında şunlar gerekir:
+
+1. **Kendi SMTP'ni bağla** (Authentication → Emails → SMTP Settings → Enable custom SMTP). Supabase'in
+   yerleşik e-posta servisi üretim için değildir: yalnızca proje ekibindeki adreslere gönderir ve saatte 2
+   e-postayla sınırlıdır, yani başka kullanıcılara hiçbir e-posta gitmez. Resend, Brevo, Postmark, Amazon SES
+   gibi bir sağlayıcıdan sunucu, port, kullanıcı adı, şifre ve gönderen adresi gir.
+2. **Authentication → Sign In / Providers → Email**: "Allow new users to sign up" **açık**, "Confirm email"
+   **açık**, "Minimum password length" **8**.
+3. **Authentication → URL Configuration**: *Site URL* = Vercel adresin (örn. `https://tus-logger.vercel.app`).
+   *Redirect URLs* listesine aynı adresi `/**` ile ekle.
+4. **Authentication → Email Templates**: iki şablonda da varsayılan `{{ .ConfirmationURL }}` bağlantısını
+   aşağıdakilerle değiştir.
+   - **Confirm signup**: `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email&next=/`
+   - **Reset password**: `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=recovery&next=/sifre-yenile`
+
+   Örnek gövde: `<p><a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=recovery&next=/sifre-yenile">Şifreni sıfırla</a></p>`
+5. Denemek için: farklı bir e-postayla kayıt ol, gelen bağlantıya tıkla, çıkış yap, "Şifremi unuttum" ile
+   sıfırla.
+
+Notlar:
+- Hesap silme henüz yok (Supabase'de yönetici anahtarı gerektirir). Gerekirse kullanıcıyı **Authentication →
+  Users** ekranından silebilirsin, ilerleme verisi de birlikte silinir.
+- Açık kayıtta bot kaydı olabilir. Gerekirse Authentication → Attack Protection'dan CAPTCHA aç, ayrıca
+  Authentication → Rate Limits sınırlarına bak.
+- Kayıtlı e-posta adresleri kişisel veridir. Başkalarına açacaksan kısa bir gizlilik notu eklemeyi düşün.
 
 ## Yerel çalıştırma
 ```bash

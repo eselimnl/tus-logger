@@ -1,6 +1,14 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
+// Giriş gerektirmeyen yollar. /auth e-postadaki bağlantıların doğrulandığı yerdir.
+const PUBLIC = ["/login", "/kayit", "/sifremi-unuttum", "/auth"];
+// Giriş yapmış kullanıcının görmesine gerek olmayanlar.
+const GUEST_ONLY = ["/login", "/kayit"];
+
+const matches = (path: string, list: string[]) =>
+  list.some((p) => path === p || path.startsWith(p + "/"));
+
 export async function proxy(request: NextRequest) {
   let response = NextResponse.next({ request });
 
@@ -23,15 +31,17 @@ export async function proxy(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const isLogin = request.nextUrl.pathname.startsWith("/login");
-  if (!user && !isLogin) {
+  const path = request.nextUrl.pathname;
+  if (!user && !matches(path, PUBLIC)) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";
+    url.search = "";
     return NextResponse.redirect(url);
   }
-  if (user && isLogin) {
+  if (user && matches(path, GUEST_ONLY)) {
     const url = request.nextUrl.clone();
     url.pathname = "/";
+    url.search = "";
     return NextResponse.redirect(url);
   }
   return response;
