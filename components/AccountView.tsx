@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { authErrorMessage, MIN_PASSWORD, passwordError } from "@/lib/auth";
@@ -72,6 +73,16 @@ export default function AccountView({ email }: { email: string }) {
             {busy ? "Kaydediliyor…" : "Şifreyi güncelle"}
           </PrimaryButton>
         </form>
+      </section>
+
+      <section className="mt-8">
+        <h2 className="mb-3 text-sm font-medium uppercase tracking-wide text-muted">Konularım</h2>
+        <Link
+          href="/baslangic"
+          className="block rounded-xl border border-line bg-card px-4 py-3 text-center font-medium"
+        >
+          Toplu işaretle · konu ekle / düzenle
+        </Link>
       </section>
 
       <section className="mt-8">

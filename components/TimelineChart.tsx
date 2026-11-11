@@ -138,8 +138,21 @@ export default function TimelineChart({ work, settings, today, examDays, actualP
         )}
         <line x1={x(0)} x2={x(0)} y1={PAD.t} y2={H - PAD.b} stroke="var(--muted)" strokeWidth={1} />
 
-        {paths.map((l) => (
-          <path key={l.key} d={l.d} fill="none" stroke={l.color} strokeWidth={l.width} strokeLinejoin="round" strokeDasharray={l.key === "soru" ? "5 3" : undefined} />
+        {/* Üç hat çoğu zaman üst üste biner: ortada birleşik, üstünde konu (düz), altında soru (kesikli). */}
+        {[paths[2], paths[0], paths[1]].map((l) => (
+          <path
+            key={l.key}
+            d={l.d}
+            // Hatlar çoğu zaman birebir örtüştüğü için konu/soru birkaç piksel ayrı çizilir.
+            transform={l.key === "konu" ? "translate(0,-2.5)" : l.key === "soru" ? "translate(0,2.5)" : undefined}
+            fill="none"
+            stroke={l.color}
+            strokeWidth={l.key === "birlesik" ? 3 : 2}
+            strokeOpacity={1}
+            strokeLinejoin="round"
+            strokeLinecap={l.key === "soru" ? "butt" : "round"}
+            strokeDasharray={l.key === "soru" ? "6 5" : undefined}
+          />
         ))}
         {LINES.map((l) => {
           const f = sum.finishDays[l.key];
@@ -159,7 +172,14 @@ export default function TimelineChart({ work, settings, today, examDays, actualP
           return (
             <li key={l.key} className="flex items-start justify-between gap-3 py-2">
               <span className="flex items-center gap-2 font-medium">
-                <span className="h-0.5 w-4 rounded" style={{ background: l.color }} />
+                <span
+                  className="w-4 rounded"
+                  style={{
+                    height: l.key === "birlesik" ? 3 : 2,
+                    background: l.key === "soru" ? `repeating-linear-gradient(90deg, ${l.color} 0 4px, transparent 4px 7px)` : l.color,
+                    
+                  }}
+                />
                 {l.label}
               </span>
               <span className="text-right text-muted">

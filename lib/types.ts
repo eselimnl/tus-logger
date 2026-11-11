@@ -8,7 +8,15 @@ export type Topic = {
   ders_ici_yuzde: number;
   oncelik: "Yüksek" | "Orta" | "Düşük";
   dagilim: Record<string, number>;
+  /** Kullanıcının kendi eklediği konu */
+  custom?: boolean;
+  /** Kullanıcı bu ortak konuyu gizlediyse (yalnızca includeHidden ile gelir) */
+  hidden?: boolean;
+  /** Kullanıcı yeniden adlandırdıysa özgün ad */
+  original?: string;
 };
+
+export const CUSTOM_ID_START = 10000;
 
 export const EXAMS = ["2026 Mart", "2025 Ağustos", "2025 Mart", "2024 Ağustos", "2024 Mart", "2023 Eylül"] as const;
 

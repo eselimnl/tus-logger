@@ -12,7 +12,7 @@ const TABS = [
 ];
 
 // Giriş yapmadan görülen sayfalarda gezinme çubuğu gösterilmez.
-const HIDDEN_ON = ["/login", "/kayit", "/sifremi-unuttum", "/auth"];
+const HIDDEN_ON = ["/login", "/kayit", "/sifremi-unuttum", "/auth", "/baslangic"];
 
 export default function BottomNav() {
   const pathname = usePathname();

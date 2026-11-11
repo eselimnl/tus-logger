@@ -80,3 +80,10 @@ npm test                     # öneri mantığı testleri
 Plan sekmesi (tekrar sayısı, soru turu, günlük hedef, haftada gün, soru payı) için Supabase SQL Editor'da
 `supabase/migrations/0003_plan.sql` dosyasını bir kez çalıştır. Kodu migration'dan önce yayınlamak güvenlidir
 (varsayılan ayarlar kullanılır); yalnızca ayarları **kaydetmek** için tablo gerekir.
+
+## Karşılama ve konu düzenleme (0004_onboarding.sql)
+
+Yeni hesap ilk girişte `/baslangic` sayfasına düşer: tüm dersler ve konular listelenir, çalışılan konu ve soru çözülenler
+toplu işaretlenip tek seferde kaydedilir; konu adı değiştirilebilir, konu eklenip gizlenebilir/silinebilir.
+Supabase SQL Editor'da `supabase/migrations/0004_onboarding.sql` dosyasını (0003'ten sonra) bir kez çalıştır.
+Çalıştırılmadıysa karşılama sayfası devreye girmez, uygulama eskisi gibi çalışır.

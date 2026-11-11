@@ -2,15 +2,60 @@ import { createClient } from "./supabase/server";
 import { clampSettings, DEFAULT_SETTINGS, type PlanSettings } from "./plan";
 import type { PlanRow, Progress, Topic } from "./types";
 
-export async function getTopics(): Promise<Topic[]> {
+const missingTable = (e: { code?: string } | null) => e?.code === "PGRST205" || e?.code === "42P01";
+
+type Edit = { topic_id: number; konu: string | null; hidden: boolean };
+
+/** Ortak konular + kullanıcının düzenlemeleri (ad, gizleme) + kendi eklediği konular. */
+export async function getTopics(opts: { includeHidden?: boolean } = {}): Promise<Topic[]> {
   const sb = await createClient();
-  const { data, error } = await sb.from("topics").select("*").order("id");
-  if (error) throw new Error(`Konular okunamadı: ${error.message}`);
-  return (data ?? []).map((t) => ({
-    ...t,
-    ortalama_soru: Number(t.ortalama_soru),
-    ders_ici_yuzde: Number(t.ders_ici_yuzde),
-  })) as Topic[];
+  const [base, custom, edits] = await Promise.all([
+    sb.from("topics").select("*").order("id"),
+    sb.from("custom_topics").select("id,ders,bolum,konu").order("id"),
+    sb.from("topic_edits").select("topic_id,konu,hidden"),
+  ]);
+  if (base.error) throw new Error(`Konular okunamadı: ${base.error.message}`);
+  // Migration (0004) henüz çalışmadıysa yalnızca ortak konular döner.
+  if (custom.error && !missingTable(custom.error)) throw new Error(`Konular okunamadı: ${custom.error.message}`);
+  if (edits.error && !missingTable(edits.error)) throw new Error(`Konular okunamadı: ${edits.error.message}`);
+
+  const byId = new Map(((edits.data ?? []) as Edit[]).map((e) => [e.topic_id, e]));
+  const out: Topic[] = [];
+  for (const t of base.data ?? []) {
+    const e = byId.get(t.id);
+    if (e?.hidden && !opts.includeHidden) continue;
+    out.push({
+      ...t,
+      konu: e?.konu ?? t.konu,
+      ...(e?.konu && e.konu !== t.konu ? { original: t.konu as string } : {}),
+      ortalama_soru: Number(t.ortalama_soru),
+      ders_ici_yuzde: Number(t.ders_ici_yuzde),
+      ...(e?.hidden ? { hidden: true } : {}),
+    } as Topic);
+  }
+  for (const c of custom.data ?? []) {
+    out.push({
+      id: c.id,
+      ders: c.ders,
+      bolum: c.bolum,
+      konu: c.konu,
+      ortalama_soru: 1,
+      toplam_6_sinav: 0,
+      ders_ici_yuzde: 0,
+      oncelik: "Düşük",
+      dagilim: {},
+      custom: true,
+    });
+  }
+  return out.sort((a, b) => a.id - b.id);
+}
+
+/** İlk giriş karşılaması tamamlandı mı? Tablo/sütun yoksa (migration çalışmadı) tamamlandı sayılır. */
+export async function getOnboarded(): Promise<boolean> {
+  const sb = await createClient();
+  const { data, error } = await sb.from("plan_settings").select("onboarded").maybeSingle();
+  if (error) return true;
+  return !!data?.onboarded;
 }
 
 export async function getProgress(): Promise<Progress[]> {

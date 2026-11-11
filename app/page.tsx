@@ -1,5 +1,6 @@
+import { redirect } from "next/navigation";
 import TodayView from "@/components/TodayView";
-import { getEventLog, getPlan, getProgress, getSettings, getTopics } from "@/lib/data";
+import { getEventLog, getOnboarded, getPlan, getProgress, getSettings, getTopics } from "@/lib/data";
 import { addDays, toDateStr, todayStr } from "@/lib/dates";
 import { recommendNew } from "@/lib/recommend";
 import type { PlanRow } from "@/lib/types";
@@ -15,13 +16,16 @@ const SLOTS: { slot: PlanRow["slot"]; position: PlanRow["position"] }[] = [
 
 export default async function Home() {
   const today = todayStr();
-  const [topics, progressRows, plan, settings, log] = await Promise.all([
+  const [topics, progressRows, plan, settings, log, onboarded] = await Promise.all([
     getTopics(),
     getProgress(),
     getPlan(today),
     getSettings(),
     getEventLog(new Date(addDays(today, -1) + "T00:00:00+03:00").toISOString()),
+    getOnboarded(),
   ]);
+  // Yeni hesap: ilk açılışta toplu işaretleme sayfasına yönlendir (mevcut ilerlemesi olan kullanıcıya dokunma).
+  if (!onboarded && progressRows.length === 0) redirect("/baslangic");
   const unitsToday = log.filter((e) => toDateStr(e.at) === today).length;
   const progress = new Map(progressRows.map((p) => [p.topic_id, p]));
 
