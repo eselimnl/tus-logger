@@ -1,4 +1,5 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
+import type { PlanSettings } from "./plan";
 import type { Checkpoint, PlanRow } from "./types";
 
 async function uid(sb: SupabaseClient): Promise<string> {
@@ -49,6 +50,21 @@ export async function saveNote(sb: SupabaseClient, topicId: number, note: string
       { onConflict: "user_id,topic_id" },
     );
   if (error) throw new Error(error.message);
+}
+
+export async function saveSettings(sb: SupabaseClient, s: PlanSettings): Promise<void> {
+  const user_id = await uid(sb);
+  const { error } = await sb
+    .from("plan_settings")
+    .upsert({ user_id, ...s, updated_at: new Date().toISOString() }, { onConflict: "user_id" });
+  if (error) {
+    const missing = error.code === "PGRST205" || error.code === "42P01";
+    throw new Error(
+      missing
+        ? "Plan tablosu henüz yok. Supabase SQL Editor'da 0003_plan.sql dosyasını çalıştır."
+        : error.message,
+    );
+  }
 }
 
 export async function upsertPlanRows(sb: SupabaseClient, rows: PlanRow[]): Promise<void> {

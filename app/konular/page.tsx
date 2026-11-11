@@ -1,9 +1,9 @@
 import TopicList from "@/components/TopicList";
-import { getProgress, getTopics } from "@/lib/data";
+import { getProgress, getSettings, getTopics } from "@/lib/data";
 
 export const dynamic = "force-dynamic";
 
 export default async function KonularPage() {
-  const [topics, progress] = await Promise.all([getTopics(), getProgress()]);
-  return <TopicList topics={topics} progress={progress} />;
+  const [topics, progress, settings] = await Promise.all([getTopics(), getProgress(), getSettings()]);
+  return <TopicList topics={topics} progress={progress} settings={settings} />;
 }

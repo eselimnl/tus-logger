@@ -4,10 +4,20 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { saveNote, setCheckpoint } from "@/lib/mutations";
 import { createClient } from "@/lib/supabase/client";
-import { CHECKPOINT_LABEL, CHECKPOINTS, EXAMS, type Checkpoint, type Progress, type Topic } from "@/lib/types";
+import { stepsFor, type PlanSettings } from "@/lib/plan";
+import { CHECKPOINT_LABEL, EXAMS, type Checkpoint, type Progress, type Topic } from "@/lib/types";
 import { PowerBadge } from "./Bits";
 
-export default function TopicDetail({ topic, progress }: { topic: Topic; progress: Progress }) {
+export default function TopicDetail({
+  topic,
+  progress,
+  settings,
+}: {
+  topic: Topic;
+  progress: Progress;
+  settings: PlanSettings;
+}) {
+  const steps = useMemo(() => stepsFor(settings), [settings]);
   const sb = useMemo(() => createClient(), []);
   const [prog, setProg] = useState(progress);
   const [note, setNote] = useState(progress.note);
@@ -84,7 +94,7 @@ export default function TopicDetail({ topic, progress }: { topic: Topic; progres
       <section className="mt-6">
         <h2 className="mb-2 text-sm font-medium uppercase tracking-wide text-muted">İlerleme</h2>
         <ul className="space-y-2">
-          {CHECKPOINTS.map((cp) => {
+          {steps.map((cp) => {
             const at = prog[`${cp}_at`];
             return (
               <li key={cp}>

@@ -7,6 +7,7 @@ const TABS = [
   { href: "/", label: "Bugün" },
   { href: "/konular", label: "Konular" },
   { href: "/ilerleme", label: "İlerleme" },
+  { href: "/plan", label: "Plan" },
   { href: "/hesap", label: "Hesap" },
 ];
 
@@ -19,7 +20,7 @@ export default function BottomNav() {
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-card/95 backdrop-blur">
-      <div className="mx-auto grid max-w-md grid-cols-4 pb-[env(safe-area-inset-bottom)]">
+      <div className="mx-auto grid max-w-md grid-cols-5 pb-[env(safe-area-inset-bottom)]">
         {TABS.map((t) => {
           const active = t.href === "/" ? pathname === "/" : pathname.startsWith(t.href);
           return (

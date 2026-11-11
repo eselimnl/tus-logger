@@ -1,6 +1,6 @@
 import TodayView from "@/components/TodayView";
-import { getPlan, getProgress, getTopics } from "@/lib/data";
-import { todayStr } from "@/lib/dates";
+import { getEventLog, getPlan, getProgress, getSettings, getTopics } from "@/lib/data";
+import { addDays, toDateStr, todayStr } from "@/lib/dates";
 import { recommendNew } from "@/lib/recommend";
 import type { PlanRow } from "@/lib/types";
 
@@ -15,11 +15,14 @@ const SLOTS: { slot: PlanRow["slot"]; position: PlanRow["position"] }[] = [
 
 export default async function Home() {
   const today = todayStr();
-  const [topics, progressRows, plan] = await Promise.all([
+  const [topics, progressRows, plan, settings, log] = await Promise.all([
     getTopics(),
     getProgress(),
     getPlan(today),
+    getSettings(),
+    getEventLog(new Date(addDays(today, -1) + "T00:00:00+03:00").toISOString()),
   ]);
+  const unitsToday = log.filter((e) => toDateStr(e.at) === today).length;
   const progress = new Map(progressRows.map((p) => [p.topic_id, p]));
 
   // Bugünün 4 yuvasından boş kalanlara öneri doldur (istemci kaydeder).
@@ -45,6 +48,8 @@ export default async function Home() {
       progress={progressRows}
       plan={[...plan, ...newRows]}
       newRows={newRows}
+      settings={settings}
+      unitsToday={unitsToday}
     />
   );
 }

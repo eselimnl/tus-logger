@@ -2,13 +2,24 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { completionSteps, stepsFor, type PlanSettings } from "@/lib/plan";
 import type { Progress, Topic } from "@/lib/types";
 import { PowerBadge, StatusDots } from "./Bits";
 
 type Status = "hepsi" | "yeni" | "devam" | "bitti";
 type Sort = "power" | "ders";
 
-export default function TopicList({ topics, progress }: { topics: Topic[]; progress: Progress[] }) {
+export default function TopicList({
+  topics,
+  progress,
+  settings,
+}: {
+  topics: Topic[];
+  progress: Progress[];
+  settings: PlanSettings;
+}) {
+  const steps = useMemo(() => stepsFor(settings), [settings]);
+  const finish = useMemo(() => completionSteps(settings), [settings]);
   const prog = useMemo(() => new Map(progress.map((p) => [p.topic_id, p])), [progress]);
   const dersler = useMemo(() => [...new Set(topics.map((t) => t.ders))], [topics]);
   const [ders, setDers] = useState<string>("Tümü");
@@ -24,7 +35,7 @@ export default function TopicList({ topics, progress }: { topics: Topic[]; progr
       .filter((t) => {
         const p = prog.get(t.id);
         const studied = !!p?.calisma_at;
-        const full = !!(p?.tekrar3_at && p?.soru2_at);
+        const full = studied && finish.every((cp) => !!p?.[`${cp}_at`]);
         if (status === "yeni") return !studied;
         if (status === "devam") return studied && !full;
         if (status === "bitti") return full;
@@ -35,7 +46,7 @@ export default function TopicList({ topics, progress }: { topics: Topic[]; progr
           ? b.ortalama_soru - a.ortalama_soru || a.id - b.id
           : a.id - b.id,
       );
-  }, [topics, prog, ders, q, status, sort]);
+  }, [topics, prog, ders, q, status, sort, finish]);
 
   const chip = (active: boolean) =>
     `shrink-0 rounded-full border px-3 py-1.5 text-sm ${
@@ -96,7 +107,7 @@ export default function TopicList({ topics, progress }: { topics: Topic[]; progr
                 <span className="block text-xs text-muted">{t.ders}</span>
                 <span className="block truncate text-sm font-medium">{t.konu}</span>
                 <span className="mt-2 block">
-                  <StatusDots progress={prog.get(t.id)} />
+                  <StatusDots progress={prog.get(t.id)} steps={steps} />
                 </span>
               </span>
               <PowerBadge topic={t} />

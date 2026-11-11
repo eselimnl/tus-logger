@@ -1,4 +1,4 @@
-import { CHECKPOINTS, type Progress, type Topic } from "@/lib/types";
+import { CHECKPOINTS, type Checkpoint, type Progress, type Topic } from "@/lib/types";
 
 export function PowerBadge({ topic }: { topic: Topic }) {
   const tone =
@@ -17,11 +17,17 @@ export function PowerBadge({ topic }: { topic: Topic }) {
   );
 }
 
-/** Çalışma, 3 tekrar, 2 soru için altı küçük nokta. */
-export function StatusDots({ progress }: { progress?: Progress }) {
+/** Kullanıcının planındaki adımlar için küçük noktalar. */
+export function StatusDots({
+  progress,
+  steps = CHECKPOINTS,
+}: {
+  progress?: Progress;
+  steps?: readonly Checkpoint[];
+}) {
   return (
     <span className="flex gap-1" aria-label="ilerleme">
-      {CHECKPOINTS.map((cp) => {
+      {steps.map((cp) => {
         const done = !!progress?.[`${cp}_at`];
         return (
           <span

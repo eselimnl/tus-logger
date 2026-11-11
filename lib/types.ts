@@ -12,7 +12,21 @@ export type Topic = {
 
 export const EXAMS = ["2026 Mart", "2025 Ağustos", "2025 Mart", "2024 Ağustos", "2024 Mart", "2023 Eylül"] as const;
 
-export const CHECKPOINTS = ["calisma", "tekrar1", "tekrar2", "tekrar3", "soru1", "soru2"] as const;
+export const TEKRAR_MAX = 5;
+export const SORU_MAX = 4;
+
+export const CHECKPOINTS = [
+  "calisma",
+  "tekrar1",
+  "tekrar2",
+  "tekrar3",
+  "tekrar4",
+  "tekrar5",
+  "soru1",
+  "soru2",
+  "soru3",
+  "soru4",
+] as const;
 export type Checkpoint = (typeof CHECKPOINTS)[number];
 
 export const CHECKPOINT_LABEL: Record<Checkpoint, string> = {
@@ -20,8 +34,12 @@ export const CHECKPOINT_LABEL: Record<Checkpoint, string> = {
   tekrar1: "1. Tekrar",
   tekrar2: "2. Tekrar",
   tekrar3: "3. Tekrar",
+  tekrar4: "4. Tekrar",
+  tekrar5: "5. Tekrar",
   soru1: "Soru 1",
   soru2: "Soru 2",
+  soru3: "Soru 3",
+  soru4: "Soru 4",
 };
 
 export type Progress = {
@@ -30,8 +48,12 @@ export type Progress = {
   tekrar1_at: string | null;
   tekrar2_at: string | null;
   tekrar3_at: string | null;
+  tekrar4_at: string | null;
+  tekrar5_at: string | null;
   soru1_at: string | null;
   soru2_at: string | null;
+  soru3_at: string | null;
+  soru4_at: string | null;
   note: string;
 };
 
@@ -49,8 +71,12 @@ export function emptyProgress(topic_id: number): Progress {
     tekrar1_at: null,
     tekrar2_at: null,
     tekrar3_at: null,
+    tekrar4_at: null,
+    tekrar5_at: null,
     soru1_at: null,
     soru2_at: null,
+    soru3_at: null,
+    soru4_at: null,
     note: "",
   };
 }

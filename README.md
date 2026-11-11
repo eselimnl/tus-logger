@@ -74,3 +74,9 @@ npm test                     # öneri mantığı testleri
 - SQL Editor yerine CLI ile seed için: `SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... npm run seed`.
 - Veri `data/tus_konular.json` dosyasında. Yeni TUS (2026 Ağustos) sayfaya eklendiğinde dosyayı güncelleyip seed'i yeniden çalıştırabilirsin.
 - Tekrar aralıkları `lib/recommend.ts` içinde `DEFAULT_INTERVALS` (1, 7, 30 gün).
+
+## Plan menüsü (0003_plan.sql)
+
+Plan sekmesi (tekrar sayısı, soru turu, günlük hedef, haftada gün, soru payı) için Supabase SQL Editor'da
+`supabase/migrations/0003_plan.sql` dosyasını bir kez çalıştır. Kodu migration'dan önce yayınlamak güvenlidir
+(varsayılan ayarlar kullanılır); yalnızca ayarları **kaydetmek** için tablo gerekir.

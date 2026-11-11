@@ -13,6 +13,7 @@ import {
   type Progress,
   type Topic,
 } from "@/lib/types";
+import type { PlanSettings } from "@/lib/plan";
 import { PowerBadge } from "./Bits";
 
 type Props = {
@@ -21,11 +22,13 @@ type Props = {
   progress: Progress[];
   plan: PlanRow[];
   newRows: PlanRow[];
+  settings: PlanSettings;
+  unitsToday: number;
 };
 
 const SLOT_LABEL = { sabah: "Sabah", aksam: "Akşam" } as const;
 
-export default function TodayView({ today, topics, progress, plan, newRows }: Props) {
+export default function TodayView({ today, topics, progress, plan, newRows, settings, unitsToday }: Props) {
   const sb = useMemo(() => createClient(), []);
   const byId = useMemo(() => new Map(topics.map((t) => [t.id, t])), [topics]);
   const [prog, setProg] = useState(() => new Map(progress.map((p) => [p.topic_id, p])));
@@ -76,8 +79,7 @@ export default function TodayView({ today, topics, progress, plan, newRows }: Pr
     }
   }
 
-  const due = useMemo(() => dueReviews(topics, prog, today), [topics, prog, today]);
-  const doneToday = rows.filter((r) => prog.get(r.topic_id)?.calisma_at).length;
+  const due = useMemo(() => dueReviews(topics, prog, today, settings.tekrar_count), [topics, prog, today, settings.tekrar_count]);
   const planIds = new Set(rows.map((r) => r.topic_id));
 
   return (
@@ -90,7 +92,7 @@ export default function TodayView({ today, topics, progress, plan, newRows }: Pr
             month: "long",
           })}
         </p>
-        <h1 className="mt-1 text-2xl font-semibold tracking-tight">Bugün {doneToday}/4 konu</h1>
+        <h1 className="mt-1 text-2xl font-semibold tracking-tight">Bugün {unitsToday}/{settings.daily_goal} birim</h1>
         <p className="mt-1 text-sm text-muted">TUS&apos;a {daysToExam(today)} gün kaldı</p>
       </header>
 

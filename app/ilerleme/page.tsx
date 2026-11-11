@@ -1,45 +1,50 @@
+import Link from "next/link";
 import Honeycomb from "@/components/Honeycomb";
-import { getCalismaLog, getProgress, getTopics } from "@/lib/data";
+import TimelineChart from "@/components/TimelineChart";
+import { getEventLog, getProgress, getSettings, getTopics } from "@/lib/data";
 import { addDays, daysToExam, EXAM_LABEL, toDateStr, todayStr, weekStart } from "@/lib/dates";
 import { buildHoneycomb, dersColors } from "@/lib/honeycomb";
+import { actualPerDay } from "@/lib/pace";
+import { buildAdvice, completionSteps, computeWork, summarize } from "@/lib/plan";
 
 export const dynamic = "force-dynamic";
 
-// "Tamamlandı" = 3 tekrar + 2 soru. Çalışma işareti adım sayılmaz (ilk harita onu kullanır).
-const FULL_STEPS = ["tekrar1", "tekrar2", "tekrar3", "soru1", "soru2"] as const;
-
 const WEEKS = 8;
-const WEEKLY_TARGET = 28; // günde 4 konu
 
 export default async function IlerlemePage() {
   const today = todayStr();
   const thisWeek = weekStart(today);
   const firstWeek = addDays(thisWeek, -7 * (WEEKS - 1));
-  const [topics, progress, log] = await Promise.all([
+  const [topics, progress, settings, events] = await Promise.all([
     getTopics(),
     getProgress(),
-    getCalismaLog(new Date(firstWeek + "T00:00:00+03:00").toISOString()),
+    getSettings(),
+    getEventLog(new Date(firstWeek + "T00:00:00+03:00").toISOString()),
   ]);
+  // "Tamamlandı" = planındaki tüm tekrar + soru adımları (ilk çalışma adım sayılmaz).
+  const FULL_STEPS = completionSteps(settings);
+  const WEEKLY_TARGET = settings.daily_goal * settings.days_per_week;
+  const log = events.map((e) => e.at);
   const prog = new Map(progress.map((p) => [p.topic_id, p]));
   const colors = dersColors([...new Set(topics.map((t) => t.ders))]);
 
   const dersler = [...new Set(topics.map((t) => t.ders))].map((ders) => {
     const ts = topics.filter((t) => t.ders === ders);
-    const count = (k: "calisma_at" | "tekrar1_at" | "tekrar2_at" | "tekrar3_at" | "soru1_at" | "soru2_at") =>
-      ts.filter((t) => prog.get(t.id)?.[k]).length;
+    const count = (k: string) =>
+      ts.filter((t) => (prog.get(t.id) as unknown as Record<string, string | null> | undefined)?.[k]).length;
     return {
       ders,
       total: ts.length,
       calisma: count("calisma_at"),
-      tekrar: [count("tekrar1_at"), count("tekrar2_at"), count("tekrar3_at")],
-      soru: [count("soru1_at"), count("soru2_at")],
+      tekrar: Array.from({ length: settings.tekrar_count }, (_, i) => count(`tekrar${i + 1}_at`)),
+      soru: Array.from({ length: settings.soru_count }, (_, i) => count(`soru${i + 1}_at`)),
     };
   });
 
   const total = topics.length;
   const studied = dersler.reduce((s, d) => s + d.calisma, 0);
-  const soruDone = dersler.reduce((s, d) => s + d.soru[0], 0);
-  const soru2Done = dersler.reduce((s, d) => s + d.soru[1], 0);
+  const soruDone = dersler.reduce((s, d) => s + (d.soru[0] ?? 0), 0);
+  const soru2Done = dersler.reduce((s, d) => s + (d.soru[1] ?? 0), 0);
   // Güç ağırlıklı kapsam: konunun sınav payı (ortalama soru) ile
   const sumPower = topics.reduce((s, t) => s + t.ortalama_soru, 0);
   const power = (has: (id: number) => boolean) =>
@@ -50,9 +55,10 @@ export default async function IlerlemePage() {
   // Honeycomb: her hücre bir sınav sorusu
   const cells = buildHoneycomb(topics);
   const steps = (id: number) => FULL_STEPS.filter((cp) => prog.get(id)?.[`${cp}_at`]).length;
+  const nFull = Math.max(1, FULL_STEPS.length);
   const names = Object.fromEntries(topics.map((t) => [t.id, t.konu]));
   const levelsStudied = Object.fromEntries(topics.map((t) => [t.id, prog.get(t.id)?.calisma_at ? 1 : 0]));
-  const levelsFull = Object.fromEntries(topics.map((t) => [t.id, steps(t.id) / FULL_STEPS.length]));
+  const levelsFull = Object.fromEntries(topics.map((t) => [t.id, FULL_STEPS.length ? steps(t.id) / nFull : prog.get(t.id)?.calisma_at ? 1 : 0]));
   const capStudied = Object.fromEntries(
     topics.map((t) => [t.id, prog.get(t.id)?.calisma_at ? "çalışıldı" : "henüz çalışılmadı"]),
   );
@@ -73,6 +79,11 @@ export default async function IlerlemePage() {
   }));
   const remaining = total - studied;
   const days = daysToExam(today);
+  const work = computeWork(total, progress, settings);
+  const pace = actualPerDay(events.filter((e) => toDateStr(e.at) >= addDays(today, -14)));
+  const sum = summarize(work, settings, { examDays: days });
+  const actual = pace === null ? null : summarize(work, settings, { examDays: days, perDay: pace });
+  const advice = buildAdvice(sum, settings, today, total, actual, pace).slice(0, 3);
 
   return (
     <main className="flex-1 px-4 pt-6">
@@ -95,8 +106,12 @@ export default async function IlerlemePage() {
           value={`%${Math.round((100 * coveredSoru) / sumPower)}`}
           sub="sınav payına göre"
         />
-        <Stat label="Kalan konu" value={String(remaining)} sub={`${Math.ceil(remaining / 4)} gün (4/gün)`} />
-        <Stat label="Sınava" value={`${days} gün`} sub={EXAM_LABEL} />
+        <Stat
+          label="Hazırlık"
+          value={`%${Math.round(sum.pct.birlesik)}`}
+          sub={`sınavda tahmini %${Math.round(sum.atExam.birlesik)}`}
+        />
+        <Stat label="Sınava" value={`${days} gün`} sub={`${EXAM_LABEL} · ${remaining} konu kaldı`} />
       </section>
 
       <section className="mt-6">
@@ -118,7 +133,8 @@ export default async function IlerlemePage() {
       <section className="mt-6">
         <h2 className="text-sm font-medium uppercase tracking-wide text-muted">Sınav haritası · tamamlananlar</h2>
         <p className="mb-2 mt-1 text-xs text-muted">
-          Parlak yanması için konunun 5 adımı da bitmeli (3 tekrar, 2 soru):{" "}
+          Parlak yanması için konunun {FULL_STEPS.length} adımı da bitmeli ({settings.tekrar_count} tekrar,{" "}
+          {settings.soru_count} soru):{" "}
           <span className="font-medium text-foreground">{cellsLit(levelsFull)}/{cells.length}</span>. Yarım kalanlar
           adım sayısı kadar loş yanar.
         </p>
@@ -133,8 +149,30 @@ export default async function IlerlemePage() {
       </section>
 
       <section className="mt-6">
+        <div className="mb-2 flex items-baseline justify-between">
+          <h2 className="text-sm font-medium uppercase tracking-wide text-muted">Hazırlık zaman çizelgesi</h2>
+          <Link href="/plan" className="text-xs text-accent underline">
+            Planı düzenle
+          </Link>
+        </div>
+        <TimelineChart work={work} settings={settings} today={today} examDays={days} actualPerDay={pace} />
+        <ul className="mt-2 space-y-2">
+          {advice.map((a, i) => (
+            <li
+              key={i}
+              className={`rounded-xl px-4 py-3 text-sm ${
+                a.tone === "warn" ? "bg-warn-soft text-warn" : a.tone === "good" ? "bg-accent-soft text-accent" : "border border-line bg-card text-muted"
+              }`}
+            >
+              {a.text}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-6">
         <h2 className="mb-2 text-sm font-medium uppercase tracking-wide text-muted">
-          Haftalık yeni konu (hedef {WEEKLY_TARGET})
+          Haftalık tamamlanan birim (hedef {WEEKLY_TARGET})
         </h2>
         <div className="flex h-32 items-end gap-1.5 rounded-2xl border border-line bg-card p-3">
           {perWeek.map((w) => (
@@ -162,10 +200,20 @@ export default async function IlerlemePage() {
                 <span className="font-medium">{d.ders}</span>
               </div>
               <Bar label="Çalışma" n={d.calisma} total={d.total} tone="bg-accent" />
-              <Bar label="Soru" n={d.soru[0]} total={d.total} tone="bg-soru" extra={`2. tur ${d.soru[1]}`} />
-              <p className="mt-2 text-xs text-muted">
-                Tekrar 1 · 2 · 3: {d.tekrar[0]} · {d.tekrar[1]} · {d.tekrar[2]}
-              </p>
+              {d.soru.length > 0 && (
+                <Bar
+                  label="Soru"
+                  n={d.soru[0]}
+                  total={d.total}
+                  tone="bg-soru"
+                  extra={d.soru.length > 1 ? `son tur ${d.soru[d.soru.length - 1]}` : undefined}
+                />
+              )}
+              {d.tekrar.length > 0 && (
+                <p className="mt-2 text-xs text-muted">
+                  Tekrar {d.tekrar.map((_, i) => i + 1).join(" · ")}: {d.tekrar.join(" · ")}
+                </p>
+              )}
             </li>
           ))}
         </ul>

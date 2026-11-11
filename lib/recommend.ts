@@ -1,11 +1,12 @@
 import { daysBetween, toDateStr } from "./dates";
 import type { Progress, Topic } from "./types";
 
-export const DEFAULT_INTERVALS = [1, 7, 30] as const; // çalışmadan sonra 1., 7., 30. gün
+/** Çalışmadan kaç gün sonra 1., 2., ... tekrar önerilir (5. tekrara kadar). */
+export const DEFAULT_INTERVALS = [1, 7, 30, 60, 120] as const;
 
 export type DueReview = {
   topic: Topic;
-  which: 1 | 2 | 3;
+  which: number;
   overdueDays: number;
 };
 
@@ -47,17 +48,24 @@ export function dueReviews(
   topics: Topic[],
   progress: Map<number, Progress>,
   today: string,
+  tekrarCount = 3,
   intervals: readonly number[] = DEFAULT_INTERVALS,
 ): DueReview[] {
   const out: DueReview[] = [];
   for (const t of topics) {
-    const p = progress.get(t.id);
+    const p = progress.get(t.id) as unknown as Record<string, string | null> | undefined;
     if (!p?.calisma_at) continue;
     const studied = toDateStr(p.calisma_at);
-    const next: 1 | 2 | 3 | null = !p.tekrar1_at ? 1 : !p.tekrar2_at ? 2 : !p.tekrar3_at ? 3 : null;
+    let next = 0;
+    for (let k = 1; k <= tekrarCount; k++) {
+      if (!p[`tekrar${k}_at`]) {
+        next = k;
+        break;
+      }
+    }
     if (!next) continue;
-    const dueDay = daysBetween(studied, today) - intervals[next - 1];
-    if (dueDay >= 0) out.push({ topic: t, which: next, overdueDays: dueDay });
+    const overdue = daysBetween(studied, today) - (intervals[next - 1] ?? intervals[intervals.length - 1]);
+    if (overdue >= 0) out.push({ topic: t, which: next, overdueDays: overdue });
   }
   return out.sort((a, b) => b.overdueDays - a.overdueDays || a.topic.id - b.topic.id);
 }
