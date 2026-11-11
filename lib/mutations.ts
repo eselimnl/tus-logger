@@ -83,10 +83,13 @@ const missing = (e: { code?: string }) => e.code === "PGRST205" || e.code === "4
 const MIGRATION_MSG = "Bu özellik için Supabase SQL Editor'da 0004_onboarding.sql dosyasını bir kez çalıştır.";
 const fail = (e: { code?: string; message: string }) => new Error(missing(e) ? MIGRATION_MSG : e.message);
 
-/** Toplu işaretleme: yalnızca progress tablosuna yazar, günlük kayıt (study_log) tutmaz ki geçmiş çalışma "bugünkü tempo"yu şişirmesin. */
+/**
+ * Toplu işaretleme: yalnızca progress tablosuna yazar, günlük kayıt (study_log) tutmaz ki geçmiş çalışma
+ * "bugünkü tempo"yu şişirmesin. `calisma: true` konunun ilk çalışma tarihini de (yoksa) atar.
+ */
 export async function bulkMark(
   sb: SupabaseClient,
-  changes: { topicId: number; calisma?: boolean; soru?: boolean }[],
+  changes: { topicId: number; calisma?: boolean; steps: Partial<Record<Checkpoint, boolean>> }[],
 ): Promise<void> {
   if (changes.length === 0) return;
   const user_id = await uid(sb);
@@ -94,8 +97,8 @@ export async function bulkMark(
   const rows = changes.map((c) => ({
     user_id,
     topic_id: c.topicId,
-    ...(c.calisma !== undefined ? { calisma_at: c.calisma ? now : null } : {}),
-    ...(c.soru !== undefined ? { soru1_at: c.soru ? now : null } : {}),
+    ...(c.calisma ? { calisma_at: now } : {}),
+    ...Object.fromEntries(Object.entries(c.steps).map(([cp, on]) => [`${cp}_at`, on ? now : null])),
     updated_at: now,
   }));
   // Aynı sütun kümesine sahip satırları birlikte gönder (upsert yalnızca verilen sütunları günceller).
