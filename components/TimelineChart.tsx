@@ -33,11 +33,13 @@ const PAD = { l: 34, r: 12, t: 14, b: 30 };
 
 export default function TimelineChart({ work, settings, today, examDays, actualPerDay }: Props) {
   const [mode, setMode] = useState<"hedef" | "gercek">("hedef");
+  const [weighted, setWeighted] = useState(true);
+  const canWeight = !!work.w;
   const useActual = mode === "gercek" && actualPerDay !== null;
   const perDay = useActual ? actualPerDay : undefined;
   const sum = useMemo(
-    () => summarize(work, settings, { examDays, perDay }),
-    [work, settings, examDays, perDay],
+    () => summarize(work, settings, { examDays, perDay, weighted }),
+    [work, settings, examDays, perDay, weighted],
   );
 
   const finishes = LINES.map((l) => sum.finishDays[l.key]).filter((v): v is number => v !== null);
@@ -48,13 +50,7 @@ export default function TimelineChart({ work, settings, today, examDays, actualP
   const x = (d: number) => PAD.l + (d / xmax) * (W - PAD.l - PAD.r);
   const y = (p: number) => PAD.t + (1 - p / 100) * (H - PAD.t - PAD.b);
 
-  const total = { konu: work.konuTotal, soru: work.soruTotal, birlesik: work.konuTotal + work.soruTotal };
-  const valueAt = (key: LineKey, i: number) => {
-    const k = sum.series.konu[i];
-    const s = sum.series.soru[i];
-    const v = key === "konu" ? k : key === "soru" ? s : k + s;
-    return total[key] > 0 ? Math.min(100, (100 * v) / total[key]) : 100;
-  };
+  const valueAt = (key: LineKey, i: number) => sum.curve[key][i];
 
   const paths = LINES.map((l) => {
     const pts: string[] = [];
@@ -92,6 +88,17 @@ export default function TimelineChart({ work, settings, today, examDays, actualP
           günde {sum.perDay.toFixed(1).replace(".", ",")} birim
         </span>
       </div>
+      {canWeight && (
+        <label className="mb-2 flex items-center gap-2 text-xs text-muted">
+          <input
+            type="checkbox"
+            className="h-4 w-4 accent-[var(--accent)]"
+            checked={weighted}
+            onChange={(e) => setWeighted(e.target.checked)}
+          />
+          Sınav ağırlıklı (çok soru çıkan konu daha değerli)
+        </label>
+      )}
 
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Haftalara göre hazırlık yüzdesi projeksiyonu">
         {[0, 25, 50, 75, 100].map((p) => (

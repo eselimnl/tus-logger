@@ -190,3 +190,32 @@ describe("durationLabel", () => {
     expect(durationLabel(206)).toBe("206 gün · ~29 hafta · ~6,8 ay");
   });
 });
+
+describe("sınav ağırlıklı hazırlık", () => {
+  const s = S({ tekrar_count: 1, soru_count: 0, daily_goal: 1 });
+  const rows = [{ ...emptyProgress(1), calisma_at: day() }];
+  const w = computeWork(2, rows, s, { 1: 6, 2: 2 });
+
+  it("çok soru çıkan konuyu çalışmak yüzdeyi daha çok artırır", () => {
+    expect(summarize(w, s, { examDays: 100 }).pct.konu).toBeCloseTo((100 * 6) / 16, 5); // 37,5
+    expect(summarize(w, s, { examDays: 100, weighted: false }).pct.konu).toBeCloseTo(25, 5);
+  });
+
+  it("kalan işi önerilen sırayla (önce her konunun sıradaki adımı, yüksek ağırlık önce) projekte eder", () => {
+    const c = summarize(w, s, { examDays: 100 }).curve.konu;
+    expect(c[1]).toBeCloseTo((100 * 8) / 16, 5);
+    expect(c[2]).toBeCloseTo((100 * 14) / 16, 5);
+    expect(c[3]).toBeCloseTo(100, 5);
+  });
+
+  it("ağırlık verilmezse eski sayım davranışı korunur, gizli konuların ilerlemesi sayılmaz", () => {
+    expect(summarize(computeWork(2, rows, s), s, { examDays: 100 }).weighted).toBe(false);
+    const hidden = computeWork(1, [{ ...emptyProgress(9), calisma_at: day() }], s, { 1: 6 });
+    expect(hidden.konuDone).toBe(0);
+  });
+
+  it("ağırlığı 0 olan konular yüzdeyi etkilemez", () => {
+    const w0 = computeWork(2, [], s, { 1: 0, 2: 0 });
+    expect(summarize(w0, s, { examDays: 100 }).pct.konu).toBe(100);
+  });
+});

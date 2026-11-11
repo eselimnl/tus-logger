@@ -21,12 +21,13 @@ type Props = {
   today: string;
   examDays: number;
   topicCount: number;
+  weights: Record<number, number>;
   progress: Progress[];
   saved: PlanSettings;
   actualPerDay: number | null;
 };
 
-export default function PlanEditor({ today, examDays, topicCount, progress, saved, actualPerDay }: Props) {
+export default function PlanEditor({ today, examDays, topicCount, weights, progress, saved, actualPerDay }: Props) {
   const router = useRouter();
   const sb = useMemo(() => createClient(), []);
   const [s, setS] = useState(saved);
@@ -35,7 +36,7 @@ export default function PlanEditor({ today, examDays, topicCount, progress, save
   const [error, setError] = useState<string | null>(null);
 
   const dirty = JSON.stringify(s) !== JSON.stringify(base);
-  const work = useMemo(() => computeWork(topicCount, progress, s), [topicCount, progress, s]);
+  const work = useMemo(() => computeWork(topicCount, progress, s, weights), [topicCount, progress, s, weights]);
   const sum = useMemo(() => summarize(work, s, { examDays }), [work, s, examDays]);
   const actual = useMemo(
     () => (actualPerDay === null ? null : summarize(work, s, { examDays, perDay: actualPerDay })),
@@ -150,7 +151,7 @@ export default function PlanEditor({ today, examDays, topicCount, progress, save
         </p>
         {F !== null && F > 0 && <p className="text-xs text-muted">{durationLabel(F)}</p>}
         <p className="mt-2 text-sm">
-          Sınav gününe hazırlık: <b className="text-accent">%{Math.round(sum.atExam.birlesik)}</b>
+          Sınav gününe hazırlık (sınav ağırlıklı): <b className="text-accent">%{Math.round(sum.atExam.birlesik)}</b>
         </p>
         <div className="mt-3 flex flex-wrap gap-2">
           {sum.neededGoal > s.daily_goal && sum.neededGoal <= LIMITS.goal[1] && (

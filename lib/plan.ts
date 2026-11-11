@@ -65,23 +65,79 @@ export const completionSteps = (s: PlanSettings): Checkpoint[] => [
 export const stepDone = (p: Progress | undefined, cp: Checkpoint): boolean =>
   !!p?.[`${cp}_at` as const];
 
-export type Work = { konuTotal: number; konuDone: number; soruTotal: number; soruDone: number };
+/**
+ * Sınav ağırlıklı iş: her birim, konunun sınav ağırlığı (ortalama soru sayısı) kadar sayılır.
+ * `gain[k]`: kalan işin ilk k birimi tamamlanınca eklenecek ağırlık. Kalan iş, uygulamanın önerdiği
+ * sırayla yapılır: önce tüm konuların bir sonraki adımı (yüksek ağırlık önce), sonra bir sonrakisi...
+ */
+export type LineWeight = { total: number; done: number; gain: number[] };
+export type Work = {
+  konuTotal: number;
+  konuDone: number;
+  soruTotal: number;
+  soruDone: number;
+  w?: { konu: LineWeight; soru: LineWeight };
+};
 
-export function computeWork(topicCount: number, progress: Progress[], s: PlanSettings): Work {
+function lineWeight(weights: [number, number][], n: number, doneOf: (id: number) => number): LineWeight {
+  let total = 0;
+  let done = 0;
+  const rest: [number, number][] = []; // [adım sırası, ağırlık]
+  for (const [id, w] of weights) {
+    const d = Math.min(n, doneOf(id));
+    total += w * n;
+    done += w * d;
+    for (let j = d + 1; j <= n; j++) rest.push([j, w]);
+  }
+  rest.sort((a, b) => a[0] - b[0] || b[1] - a[1]);
+  const gain = [0];
+  for (const [, w] of rest) gain.push(gain[gain.length - 1] + w);
+  return { total, done, gain };
+}
+
+/**
+ * `weights` (konu id → ağırlık) verilirse yalnızca bu konular sayılır (gizlenenler hariç)
+ * ve sınav ağırlıklı yüzde hesaplanabilir.
+ */
+export function computeWork(
+  topicCount: number,
+  progress: Progress[],
+  s: PlanSettings,
+  weights?: Record<number, number>,
+): Work {
   const ks = konuSteps(s);
   const ss = soruSteps(s);
+  const byId = new Map(progress.map((p) => [p.topic_id, p]));
+  const rows = weights ? progress.filter((p) => p.topic_id in weights) : progress;
   let konuDone = 0;
   let soruDone = 0;
-  for (const p of progress) {
+  for (const p of rows) {
     for (const cp of ks) if (stepDone(p, cp)) konuDone++;
     for (const cp of ss) if (stepDone(p, cp)) soruDone++;
   }
-  return {
+  const work: Work = {
     konuTotal: topicCount * ks.length,
     konuDone,
     soruTotal: topicCount * ss.length,
     soruDone,
   };
+  if (weights) {
+    const list = Object.entries(weights).map(([id, w]) => [Number(id), w] as [number, number]);
+    const count = (steps: Checkpoint[]) => (id: number) => steps.filter((cp) => stepDone(byId.get(id), cp)).length;
+    work.w = {
+      konu: lineWeight(list, ks.length, count(ks)),
+      soru: lineWeight(list, ss.length, count(ss)),
+    };
+  }
+  return work;
+}
+
+/** Kalan işin `units` birimi yapılınca kazanılan ağırlık (kesirli birim doğrusal ara değer). */
+function gainAt(gain: number[], units: number): number {
+  const u = Math.max(0, Math.min(gain.length - 1, units));
+  const i = Math.floor(u + 1e-9);
+  const f = u - i;
+  return gain[i] + (i + 1 < gain.length ? f * (gain[i + 1] - gain[i]) : 0);
 }
 
 export type Projection = { konu: number[]; soru: number[] };
@@ -145,6 +201,9 @@ export type Summary = {
   /** İki hat aynı gün bitsin diye soru payı (yüzde) */
   autoSoruShare: number;
   series: Projection;
+  /** Gün gün yüzde eğrisi (0 = bugün); `weighted` ise sınav ağırlıklı */
+  curve: Record<LineKey, number[]>;
+  weighted: boolean;
 };
 
 const pct = (done: number, total: number) => (total > 0 ? Math.min(100, (100 * done) / total) : 100);
@@ -152,7 +211,7 @@ const pct = (done: number, total: number) => (total > 0 ? Math.min(100, (100 * d
 export function summarize(
   work: Work,
   s: PlanSettings,
-  o: { examDays: number; perDay?: number },
+  o: { examDays: number; perDay?: number; weighted?: boolean },
 ): Summary {
   const perDay = o.perDay ?? (s.daily_goal * s.days_per_week) / 7;
   const series = project(work, s, perDay);
@@ -163,10 +222,26 @@ export function summarize(
   const remaining = remK + remS;
   const comb = series.konu.map((v, i) => v + series.soru[i]);
 
+  const weighted = !!work.w && o.weighted !== false;
+  const curve: Record<LineKey, number[]> = { konu: [], soru: [], birlesik: [] };
+  for (let i = 0; i < series.konu.length; i++) {
+    if (weighted && work.w) {
+      const { konu: wk, soru: ws } = work.w;
+      const gk = gainAt(wk.gain, series.konu[i] - work.konuDone);
+      const gs = gainAt(ws.gain, series.soru[i] - work.soruDone);
+      curve.konu.push(pct(wk.done + gk, wk.total));
+      curve.soru.push(pct(ws.done + gs, ws.total));
+      curve.birlesik.push(pct(wk.done + gk + ws.done + gs, wk.total + ws.total));
+    } else {
+      curve.konu.push(pct(series.konu[i], work.konuTotal));
+      curve.soru.push(pct(series.soru[i], work.soruTotal));
+      curve.birlesik.push(pct(comb[i], total));
+    }
+  }
   const at = (i: number): Record<LineKey, number> => ({
-    konu: pct(series.konu[i], work.konuTotal),
-    soru: pct(series.soru[i], work.soruTotal),
-    birlesik: pct(comb[i], total),
+    konu: curve.konu[i],
+    soru: curve.soru[i],
+    birlesik: curve.birlesik[i],
   });
   const first = (arr: number[], target: number): number | null => {
     if (target <= 0) return 0;
@@ -194,6 +269,8 @@ export function summarize(
     neededGoalBuffer: need(o.examDays - 14),
     autoSoruShare: remaining > 0 ? Math.round((100 * remS) / remaining) : 0,
     series,
+    curve,
+    weighted,
   };
 }
 

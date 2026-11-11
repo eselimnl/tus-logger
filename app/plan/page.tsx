@@ -18,6 +18,7 @@ export default async function PlanPage() {
       today={today}
       examDays={daysToExam(today)}
       topicCount={topics.length}
+      weights={Object.fromEntries(topics.map((t) => [t.id, t.ortalama_soru]))}
       progress={progress}
       saved={settings}
       actualPerDay={actualPerDay(log)}

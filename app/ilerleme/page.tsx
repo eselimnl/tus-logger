@@ -79,7 +79,8 @@ export default async function IlerlemePage() {
   }));
   const remaining = total - studied;
   const days = daysToExam(today);
-  const work = computeWork(total, progress, settings);
+  const weights = Object.fromEntries(topics.map((t) => [t.id, t.ortalama_soru]));
+  const work = computeWork(total, progress, settings, weights);
   const pace = actualPerDay(events.filter((e) => toDateStr(e.at) >= addDays(today, -14)));
   const sum = summarize(work, settings, { examDays: days });
   const actual = pace === null ? null : summarize(work, settings, { examDays: days, perDay: pace });
@@ -109,7 +110,7 @@ export default async function IlerlemePage() {
         <Stat
           label="Hazırlık"
           value={`%${Math.round(sum.pct.birlesik)}`}
-          sub={`sınavda tahmini %${Math.round(sum.atExam.birlesik)}`}
+          sub={`sınav ağırlıklı · sınavda tahmini %${Math.round(sum.atExam.birlesik)}`}
         />
         <Stat label="Sınava" value={`${days} gün`} sub={`${EXAM_LABEL} · ${remaining} konu kaldı`} />
       </section>
